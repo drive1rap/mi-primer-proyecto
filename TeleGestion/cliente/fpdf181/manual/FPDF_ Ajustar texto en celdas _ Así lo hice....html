@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/ -->
+<html lang="es"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>FPDF: Ajustar texto en celdas | Así lo hice...</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://huguidugui.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Así lo hice... » Feed" href="https://huguidugui.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Así lo hice... » RSS de los comentarios" href="https://huguidugui.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Así lo hice... » FPDF: Ajustar texto en celdas RSS de los comentarios" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<link rel="stylesheet" id="all-css-0" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-1" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-2" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource(1)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"No se ha completado su suscripcion, por favor intentelo de nuevo con una direcci\u00f3n de correo valida."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource(2)"></script>
+<link rel="stylesheet" id="all-css-0" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://huguidugui.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="FPDF:  Estilo de Celdas" href="https://huguidugui.wordpress.com/2013/11/25/fpdf-estilo-de-celdas/">
+<link rel="next" title="FPDF: Celdas redondeadas" href="https://huguidugui.wordpress.com/2013/11/27/fpdf-celdas-redondeadas/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/">
+<link rel="shortlink" href="http://wp.me/p24DD5-cK">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Fhuguidugui.wordpress.com%2F2013%2F11%2F26%2Ffpdf-ajustar-texto-en-celdas%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Fhuguidugui.wordpress.com%2F2013%2F11%2F26%2Ffpdf-ajustar-texto-en-celdas%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPDF: Ajustar texto en celdas">
+<meta property="og:url" content="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/">
+<meta property="og:description" content="Ahora bien, ¿qué pasa si en la cabecera, un título tiene más caracteres o uno de nuestros datos y por lo tanto no quepan en el ancho de celda que escogimos? pasa esto: Para solucionar esto, colocar...">
+<meta property="article:published_time" content="2013-11-26T17:26:35+00:00">
+<meta property="article:modified_time" content="2013-11-29T12:39:58+00:00">
+<meta property="og:site_name" content="Así lo hice...">
+<meta property="og:image" content="https://huguidugui.files.wordpress.com/2013/11/tutotablahorizontaconajuste.png?w=645">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image" content="https://huguidugui.files.wordpress.com/2013/11/tutotablahorizontasinajuste.png?w=240">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/cc2f6b78cc275b6b427ca9f81662b3ea?s=16" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/cc2f6b78cc275b6b427ca9f81662b3ea?s=16" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/957eebc6dfff68db0aea9715759c99cf?s=114">
+<link rel="openid.server" href="https://huguidugui.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://huguidugui.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://huguidugui.wordpress.com/osd.xml" title="Así lo hice...">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="Así lo hice..."><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Documentar experiencias informáticas y otros chunches"><meta name="msapplication-task" content="name=Suscribir;action-uri=https://huguidugui.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/cc2f6b78cc275b6b427ca9f81662b3ea?s=16"><meta name="msapplication-task" content="name=Registrar un blog gratuito;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Soporte de WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Foros de WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="FPDF: Ajustar texto en celdas | Así lo hice... en WordPress.com">
+<meta name="description" content="Ahora bien, ¿qué pasa si en la cabecera, un título tiene más caracteres o uno de nuestros datos y por lo tanto no quepan en el ancho de celda que escogimos? pasa esto: Para solucionar esto, colocaremos en nuestra clase de PDF.php una serie de métodos que ajustan el texto a la celda. Este código…">
+		<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/amzn_ads.js"></script>
+		<script type="text/javascript">
+		try { amznads.getAds("3033"); } catch(e) { /* ignore */ }
+		</script><script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/bid"></script>
+		<script type="text/javascript">
+		try {
+			var a9_p = amznads.getKeys(),
+			_ipw_custom = {
+				wordAds: '0',
+				adSafe: '0',
+				domain: 'huguidugui.wordpress.com',
+				pageURL: 'https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/'
+			};
+			if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+		} catch(e) {}
+		</script>		<!-- IPONWEB header script -->
+		<script type="text/javascript">
+			window.__ATA = {
+				scriptSrc: '//s.pubmine.com/showad.js',
+				slotPrefix: 'automattic-id-',
+				initAd: function(o) {
+					var o = o || {},
+						g = window,
+						d = g.document,
+						wr = d.write,
+						id = g.__ATA.id();
+					wr.call(d, '<div id="' + id + '" data-section="' + (o.sectionId || 0) + '"' + (o.type ? ('data-type="' + o.type + '"') : '') + ' ' + (o.forcedUrl ? ('data-forcedurl="' + o.forcedUrl + '"') : '') + ' style="width:' + (o.width || 0) + 'px; height:' + (o.height || 0) + 'px;">');
+					g.__ATA.displayAd(id);
+					wr.call(d, '</div>');
+				},
+				displayAd: function(id) {
+					window.__ATA.ids = window.__ATA.ids || {};
+					window.__ATA.ids[id] = 1;
+				},
+				customParams: _ipw_custom,
+				id: function() {
+					return window.__ATA.slotPrefix + (parseInt(Math.random() * 10000, 10) + 1 + (new Date()).getMilliseconds());
+				}
+			};
+			(function(d, ata) {
+				var pr = "https:" === d.location.protocol ? "https:" : "http:",
+					src = pr + ata.scriptSrc,
+					st = "text/javascript";
+				d.write('<scr' + 'ipt type="' + st + '" src="' + src + '"><\/scr' + 'ipt>');
+			})(window.document, window.__ATA);
+		</script><script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/showad.js"></script>
+		<script type="text/javascript">
+		jQuery(window).ready(function () {
+			jQuery("a.wpa-about").text("Acerca de estos anuncios");
+		});
+		</script><link rel="stylesheet" type="text/css" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/shCore.css"><link rel="stylesheet" type="text/css" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/ga.js"></script>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/services.css"></head>
+<body class="single single-post postid-790 single-format-standard mp6 customizer-styles-applied color-default highlander-enabled highlander-light">
+
+<div id="page">
+	<div id="header" class="clear-fix">
+		<div id="logo">
+						<h3 id="site-title">
+				<span>
+					<a href="https://huguidugui.wordpress.com/" title="Así lo hice…" rel="home">Así lo hice…</a>
+				</span>
+			</h3>
+			<div class="description">Documentar experiencias informáticas y otros chunches</div>
+
+		</div><!-- #logo -->
+
+		<div id="nav">
+			<ul id="menu-apoyar-el-blog" class="menu"><li id="menu-item-866" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-866"><a href="https://huguidugui.wordpress.com/">Inicio</a></li>
+<li id="menu-item-867" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-867"><a href="https://huguidugui.wordpress.com/about/">Apoyar el blog</a></li>
+</ul>		</div><!-- #nav -->
+
+	</div><!-- #header -->
+
+	<div id="main">
+		<a href="https://huguidugui.wordpress.com/feed/rss/" id="rss-link">RSS</a>
+		<div id="main-top">
+			<div id="main-bot" class="clear-fix">
+				<div id="content">
+	<div class="post-navigation clear-fix">
+		<div class="nav-previous">
+			<a href="https://huguidugui.wordpress.com/2013/11/25/fpdf-estilo-de-celdas/" rel="prev"><span class="meta-nav">←</span> FPDF:  Estilo de&nbsp;Celdas</a>		</div>
+		<div class="nav-next">
+			<a href="https://huguidugui.wordpress.com/2013/11/27/fpdf-celdas-redondeadas/" rel="next">FPDF: Celdas redondeadas <span class="meta-nav">→</span></a>		</div>
+	</div><!-- .post-navigation -->
+
+	<div class="post post-790 type-post status-publish format-standard hentry category-fpdf category-php tag-fpdf tag-reportes-fpdf tag-tablas-fpdf">
+
+		
+				<h2 class="post-title">
+							FPDF: Ajustar texto en&nbsp;celdas					</h2>
+	
+				<div class="date">
+			<div class="bg">
+									<span class="day">26</span>
+					<span>Nov</span>
+							</div>
+		</div><!-- .date -->
+	
+	<div class="entry">
+		
+		<p style="text-align:justify;">Ahora bien, ¿qué pasa si en la cabecera, un título tiene más caracteres o uno de nuestros datos y por lo tanto no quepan en el ancho de celda que escogimos? pasa esto:</p>
+<div data-shortcode="caption" id="attachment_792" style="width: 655px" class="wp-caption aligncenter"><a href="https://huguidugui.files.wordpress.com/2013/11/tutotablahorizontasinajuste.png"><img class="size-large wp-image-792" alt="Datos que sobrepasan la celda" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/tutotablahorizontasinajuste.png" width="645" height="219"></a><p class="wp-caption-text">Datos que sobrepasan la celda</p></div>
+<p>Para solucionar esto, colocaremos en nuestra clase de PDF.php una serie de métodos que ajustan el texto a la celda. Este código es proporcionado por la propia comunidad de fpdf.org en la opción de su página principal llamada “Scripts”.</p>
+<p>Al final de los métodos que ya tenemos, colocaremos este código. El método que usaremos se llama CellFitSpace( ) el cual sustituirá a Cell( ). El código de PDF.php es el siguiente:</p>
+<p><span id="more-790"></span></p>
+<div><div id="highlighter_937729" class="syntaxhighlighter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div><div class="line number64 index63 alt1">64</div><div class="line number65 index64 alt2">65</div><div class="line number66 index65 alt1">66</div><div class="line number67 index66 alt2">67</div><div class="line number68 index67 alt1">68</div><div class="line number69 index68 alt2">69</div><div class="line number70 index69 alt1">70</div><div class="line number71 index70 alt2">71</div><div class="line number72 index71 alt1">72</div><div class="line number73 index72 alt2">73</div><div class="line number74 index73 alt1">74</div><div class="line number75 index74 alt2">75</div><div class="line number76 index75 alt1">76</div><div class="line number77 index76 alt2">77</div><div class="line number78 index77 alt1">78</div><div class="line number79 index78 alt2">79</div><div class="line number80 index79 alt1">80</div><div class="line number81 index80 alt2">81</div><div class="line number82 index81 alt1">82</div><div class="line number83 index82 alt2">83</div><div class="line number84 index83 alt1">84</div><div class="line number85 index84 alt2">85</div><div class="line number86 index85 alt1">86</div><div class="line number87 index86 alt2">87</div><div class="line number88 index87 alt1">88</div><div class="line number89 index88 alt2">89</div><div class="line number90 index89 alt1">90</div><div class="line number91 index90 alt2">91</div><div class="line number92 index91 alt1">92</div><div class="line number93 index92 alt2">93</div><div class="line number94 index93 alt1">94</div><div class="line number95 index94 alt2">95</div><div class="line number96 index95 alt1">96</div><div class="line number97 index96 alt2">97</div><div class="line number98 index97 alt1">98</div><div class="line number99 index98 alt2">99</div><div class="line number100 index99 alt1">100</div><div class="line number101 index100 alt2">101</div><div class="line number102 index101 alt1">102</div><div class="line number103 index102 alt2">103</div><div class="line number104 index103 alt1">104</div><div class="line number105 index104 alt2">105</div><div class="line number106 index105 alt1">106</div><div class="line number107 index106 alt2">107</div><div class="line number108 index107 alt1">108</div><div class="line number109 index108 alt2">109</div><div class="line number110 index109 alt1">110</div><div class="line number111 index110 alt2">111</div><div class="line number112 index111 alt1">112</div><div class="line number113 index112 alt2">113</div><div class="line number114 index113 alt1">114</div><div class="line number115 index114 alt2">115</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;?php</code></div><div class="line number2 index1 alt1"><code class="php keyword">require</code><code class="php plain">(</code><code class="php string">'fpdf/fpdf.php'</code><code class="php plain">);</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="php keyword">class</code> <code class="php plain">PDF </code><code class="php keyword">extends</code> <code class="php plain">FPDF</code></div><div class="line number5 index4 alt2"><code class="php plain">{</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">function</code> <code class="php plain">cabeceraHorizontal(</code><code class="php variable">$cabecera</code><code class="php plain">)</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetXY(10, 10);</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetFont(</code><code class="php string">'Arial'</code><code class="php plain">,</code><code class="php string">'B'</code><code class="php plain">,10);</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetFillColor(2,157,116);</code><code class="php comments">//Fondo verde de celda</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetTextColor(240, 255, 240); </code><code class="php comments">//Letra color blanco</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">foreach</code><code class="php plain">(</code><code class="php variable">$cabecera</code> <code class="php keyword">as</code> <code class="php variable">$fila</code><code class="php plain">)</code></div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;CellFitSpace(30,7, utf8_decode(</code><code class="php variable">$fila</code><code class="php plain">),1, 0 , </code><code class="php string">'L'</code><code class="php plain">, true);</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number18 index17 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">function</code> <code class="php plain">datosHorizontal(</code><code class="php variable">$datos</code><code class="php plain">)</code></div><div class="line number21 index20 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number22 index21 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetXY(10,17);</code></div><div class="line number23 index22 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetFont(</code><code class="php string">'Arial'</code><code class="php plain">,</code><code class="php string">''</code><code class="php plain">,10);</code></div><div class="line number24 index23 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetFillColor(229, 229, 229); </code><code class="php comments">//Gris tenue de cada fila</code></div><div class="line number25 index24 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;SetTextColor(3, 3, 3); </code><code class="php comments">//Color del texto: Negro</code></div><div class="line number26 index25 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$bandera</code> <code class="php plain">= false; </code><code class="php comments">//Para alternar el relleno</code></div><div class="line number27 index26 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">foreach</code><code class="php plain">(</code><code class="php variable">$datos</code> <code class="php keyword">as</code> <code class="php variable">$fila</code><code class="php plain">)</code></div><div class="line number28 index27 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number29 index28 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Usaremos CellFitSpace en lugar de Cell</code></div><div class="line number30 index29 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;CellFitSpace(30,7, utf8_decode(</code><code class="php variable">$fila</code><code class="php plain">[</code><code class="php string">'nombre'</code><code class="php plain">]),1, 0 , </code><code class="php string">'L'</code><code class="php plain">, </code><code class="php variable">$bandera</code> <code class="php plain">);</code></div><div class="line number31 index30 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;CellFitSpace(30,7, utf8_decode(</code><code class="php variable">$fila</code><code class="php plain">[</code><code class="php string">'apellido'</code><code class="php plain">]),1, 0 , </code><code class="php string">'L'</code><code class="php plain">, </code><code class="php variable">$bandera</code> <code class="php plain">);</code></div><div class="line number32 index31 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;CellFitSpace(30,7, utf8_decode(</code><code class="php variable">$fila</code><code class="php plain">[</code><code class="php string">'matricula'</code><code class="php plain">]),1, 0 , </code><code class="php string">'L'</code><code class="php plain">, </code><code class="php variable">$bandera</code> <code class="php plain">);</code></div><div class="line number33 index32 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;Ln();</code><code class="php comments">//Salto de línea para generar otra fila</code></div><div class="line number34 index33 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$bandera</code> <code class="php plain">= !</code><code class="php variable">$bandera</code><code class="php plain">;</code><code class="php comments">//Alterna el valor de la bandera</code></div><div class="line number35 index34 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number36 index35 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">function</code> <code class="php plain">tablaHorizontal(</code><code class="php variable">$cabeceraHorizontal</code><code class="php plain">, </code><code class="php variable">$datosHorizontal</code><code class="php plain">)</code></div><div class="line number39 index38 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number40 index39 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;cabeceraHorizontal(</code><code class="php variable">$cabeceraHorizontal</code><code class="php plain">);</code></div><div class="line number41 index40 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;datosHorizontal(</code><code class="php variable">$datosHorizontal</code><code class="php plain">);</code></div><div class="line number42 index41 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number43 index42 alt2">&nbsp;</div><div class="line number44 index43 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//***** Aquí comienza código para ajustar texto *************</code></div><div class="line number45 index44 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//***********************************************************</code></div><div class="line number46 index45 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">function</code> <code class="php plain">CellFit(</code><code class="php variable">$w</code><code class="php plain">, </code><code class="php variable">$h</code><code class="php plain">=0, </code><code class="php variable">$txt</code><code class="php plain">=</code><code class="php string">''</code><code class="php plain">, </code><code class="php variable">$border</code><code class="php plain">=0, </code><code class="php variable">$ln</code><code class="php plain">=0, </code><code class="php variable">$align</code><code class="php plain">=</code><code class="php string">''</code><code class="php plain">, </code><code class="php variable">$fill</code><code class="php plain">=false, </code><code class="php variable">$link</code><code class="php plain">=</code><code class="php string">''</code><code class="php plain">, </code><code class="php variable">$scale</code><code class="php plain">=false, </code><code class="php variable">$force</code><code class="php plain">=true)</code></div><div class="line number47 index46 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number48 index47 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Get string width</code></div><div class="line number49 index48 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$str_width</code><code class="php plain">=</code><code class="php variable">$this</code><code class="php plain">-&gt;GetStringWidth(</code><code class="php variable">$txt</code><code class="php plain">);</code></div><div class="line number50 index49 alt1">&nbsp;</div><div class="line number51 index50 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Calculate ratio to fit cell</code></div><div class="line number52 index51 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">(</code><code class="php variable">$w</code><code class="php plain">==0)</code></div><div class="line number53 index52 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$w</code> <code class="php plain">= </code><code class="php variable">$this</code><code class="php plain">-&gt;w-</code><code class="php variable">$this</code><code class="php plain">-&gt;rMargin-</code><code class="php variable">$this</code><code class="php plain">-&gt;x;</code></div><div class="line number54 index53 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$ratio</code> <code class="php plain">= (</code><code class="php variable">$w</code><code class="php plain">-</code><code class="php variable">$this</code><code class="php plain">-&gt;cMargin*2)/</code><code class="php variable">$str_width</code><code class="php plain">;</code></div><div class="line number55 index54 alt2">&nbsp;</div><div class="line number56 index55 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$fit</code> <code class="php plain">= (</code><code class="php variable">$ratio</code> <code class="php plain">&lt; 1 || (</code><code class="php variable">$ratio</code> <code class="php plain">&gt; 1 &amp;&amp; </code><code class="php variable">$force</code><code class="php plain">));</code></div><div class="line number57 index56 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code> <code class="php plain">(</code><code class="php variable">$fit</code><code class="php plain">)</code></div><div class="line number58 index57 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number59 index58 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code> <code class="php plain">(</code><code class="php variable">$scale</code><code class="php plain">)</code></div><div class="line number60 index59 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number61 index60 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Calculate horizontal scaling</code></div><div class="line number62 index61 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$horiz_scale</code><code class="php plain">=</code><code class="php variable">$ratio</code><code class="php plain">*100.0;</code></div><div class="line number63 index62 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Set horizontal scaling</code></div><div class="line number64 index63 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;_out(sprintf(</code><code class="php string">'BT %.2F Tz ET'</code><code class="php plain">,</code><code class="php variable">$horiz_scale</code><code class="php plain">));</code></div><div class="line number65 index64 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number66 index65 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">else</code></div><div class="line number67 index66 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number68 index67 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Calculate character spacing in points</code></div><div class="line number69 index68 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$char_space</code><code class="php plain">=(</code><code class="php variable">$w</code><code class="php plain">-</code><code class="php variable">$this</code><code class="php plain">-&gt;cMargin*2-</code><code class="php variable">$str_width</code><code class="php plain">)/max(</code><code class="php variable">$this</code><code class="php plain">-&gt;MBGetStringLength(</code><code class="php variable">$txt</code><code class="php plain">)-1,1)*</code><code class="php variable">$this</code><code class="php plain">-&gt;k;</code></div><div class="line number70 index69 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Set character spacing</code></div><div class="line number71 index70 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;_out(sprintf(</code><code class="php string">'BT %.2F Tc ET'</code><code class="php plain">,</code><code class="php variable">$char_space</code><code class="php plain">));</code></div><div class="line number72 index71 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number73 index72 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Override user alignment (since text will fill up cell)</code></div><div class="line number74 index73 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$align</code><code class="php plain">=</code><code class="php string">''</code><code class="php plain">;</code></div><div class="line number75 index74 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number76 index75 alt1">&nbsp;</div><div class="line number77 index76 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Pass on to Cell method</code></div><div class="line number78 index77 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;Cell(</code><code class="php variable">$w</code><code class="php plain">,</code><code class="php variable">$h</code><code class="php plain">,</code><code class="php variable">$txt</code><code class="php plain">,</code><code class="php variable">$border</code><code class="php plain">,</code><code class="php variable">$ln</code><code class="php plain">,</code><code class="php variable">$align</code><code class="php plain">,</code><code class="php variable">$fill</code><code class="php plain">,</code><code class="php variable">$link</code><code class="php plain">);</code></div><div class="line number79 index78 alt2">&nbsp;</div><div class="line number80 index79 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Reset character spacing/horizontal scaling</code></div><div class="line number81 index80 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code> <code class="php plain">(</code><code class="php variable">$fit</code><code class="php plain">)</code></div><div class="line number82 index81 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;_out(</code><code class="php string">'BT '</code><code class="php plain">.(</code><code class="php variable">$scale</code> <code class="php plain">? </code><code class="php string">'100 Tz'</code> <code class="php plain">: </code><code class="php string">'0 Tc'</code><code class="php plain">).</code><code class="php string">' ET'</code><code class="php plain">);</code></div><div class="line number83 index82 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number84 index83 alt1">&nbsp;</div><div class="line number85 index84 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">function</code> <code class="php plain">CellFitSpace(</code><code class="php variable">$w</code><code class="php plain">, </code><code class="php variable">$h</code><code class="php plain">=0, </code><code class="php variable">$txt</code><code class="php plain">=</code><code class="php string">''</code><code class="php plain">, </code><code class="php variable">$border</code><code class="php plain">=0, </code><code class="php variable">$ln</code><code class="php plain">=0, </code><code class="php variable">$align</code><code class="php plain">=</code><code class="php string">''</code><code class="php plain">, </code><code class="php variable">$fill</code><code class="php plain">=false, </code><code class="php variable">$link</code><code class="php plain">=</code><code class="php string">''</code><code class="php plain">)</code></div><div class="line number86 index85 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number87 index86 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$this</code><code class="php plain">-&gt;CellFit(</code><code class="php variable">$w</code><code class="php plain">,</code><code class="php variable">$h</code><code class="php plain">,</code><code class="php variable">$txt</code><code class="php plain">,</code><code class="php variable">$border</code><code class="php plain">,</code><code class="php variable">$ln</code><code class="php plain">,</code><code class="php variable">$align</code><code class="php plain">,</code><code class="php variable">$fill</code><code class="php plain">,</code><code class="php variable">$link</code><code class="php plain">,false,false);</code></div><div class="line number88 index87 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number89 index88 alt2">&nbsp;</div><div class="line number90 index89 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php comments">//Patch to also work with CJK double-byte text</code></div><div class="line number91 index90 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">function</code> <code class="php plain">MBGetStringLength(</code><code class="php variable">$s</code><code class="php plain">)</code></div><div class="line number92 index91 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number93 index92 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">(</code><code class="php variable">$this</code><code class="php plain">-&gt;CurrentFont[</code><code class="php string">'type'</code><code class="php plain">]==</code><code class="php string">'Type0'</code><code class="php plain">)</code></div><div class="line number94 index93 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number95 index94 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$len</code> <code class="php plain">= 0;</code></div><div class="line number96 index95 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$nbbytes</code> <code class="php plain">= </code><code class="php functions">strlen</code><code class="php plain">(</code><code class="php variable">$s</code><code class="php plain">);</code></div><div class="line number97 index96 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">for</code> <code class="php plain">(</code><code class="php variable">$i</code> <code class="php plain">= 0; </code><code class="php variable">$i</code> <code class="php plain">&lt; </code><code class="php variable">$nbbytes</code><code class="php plain">; </code><code class="php variable">$i</code><code class="php plain">++)</code></div><div class="line number98 index97 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number99 index98 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code> <code class="php plain">(ord(</code><code class="php variable">$s</code><code class="php plain">[</code><code class="php variable">$i</code><code class="php plain">])&lt;128)</code></div><div class="line number100 index99 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$len</code><code class="php plain">++;</code></div><div class="line number101 index100 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">else</code></div><div class="line number102 index101 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number103 index102 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$len</code><code class="php plain">++;</code></div><div class="line number104 index103 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$i</code><code class="php plain">++;</code></div><div class="line number105 index104 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number106 index105 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number107 index106 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">return</code> <code class="php variable">$len</code><code class="php plain">;</code></div><div class="line number108 index107 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number109 index108 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">else</code></div><div class="line number110 index109 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">return</code> <code class="php functions">strlen</code><code class="php plain">(</code><code class="php variable">$s</code><code class="php plain">);</code></div><div class="line number111 index110 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number112 index111 alt1"><code class="php comments">//************** Fin del código para ajustar texto *****************</code></div><div class="line number113 index112 alt2"><code class="php comments">//******************************************************************</code></div><div class="line number114 index113 alt1"><code class="php plain">} </code><code class="php comments">// FIN Class PDF</code></div><div class="line number115 index114 alt2"><code class="php plain">?&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>index.php</p>
+<div><div id="highlighter_139862" class="syntaxhighlighter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;?php</code></div><div class="line number2 index1 alt1"><code class="php keyword">include_once</code><code class="php plain">(</code><code class="php string">'PDF.php'</code><code class="php plain">);</code></div><div class="line number3 index2 alt2"><code class="php variable">$pdf</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">PDF();</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="php variable">$pdf</code><code class="php plain">-&gt;AddPage();</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="php variable">$miCabecera</code> <code class="php plain">= </code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'Nombre de campo'</code><code class="php plain">, </code><code class="php string">'Apellido'</code><code class="php plain">, </code><code class="php string">'Matrícula campo'</code><code class="php plain">);</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="php variable">$misDatos</code> <code class="php plain">= </code><code class="php keyword">array</code><code class="php plain">(</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'nombre'</code> <code class="php plain">=&gt; </code><code class="php string">'Esperbeneplatoledo'</code><code class="php plain">, </code><code class="php string">'apellido'</code> <code class="php plain">=&gt; </code><code class="php string">'Martínez'</code><code class="php plain">, </code><code class="php string">'matricula'</code> <code class="php plain">=&gt; </code><code class="php string">'20420423'</code><code class="php plain">),</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'nombre'</code> <code class="php plain">=&gt; </code><code class="php string">'Araceli'</code><code class="php plain">, </code><code class="php string">'apellido'</code> <code class="php plain">=&gt; </code><code class="php string">'Morales'</code><code class="php plain">, </code><code class="php string">'matricula'</code> <code class="php plain">=&gt;&nbsp; </code><code class="php string">'204909'</code><code class="php plain">),</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'nombre'</code> <code class="php plain">=&gt; </code><code class="php string">'Georginadavabulus'</code><code class="php plain">, </code><code class="php string">'apellido'</code> <code class="php plain">=&gt; </code><code class="php string">'Galindo'</code><code class="php plain">, </code><code class="php string">'matricula'</code> <code class="php plain">=&gt;&nbsp; </code><code class="php string">'2043442'</code><code class="php plain">),</code></div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'nombre'</code> <code class="php plain">=&gt; </code><code class="php string">'Luis'</code><code class="php plain">, </code><code class="php string">'apellido'</code> <code class="php plain">=&gt; </code><code class="php string">'Dolores'</code><code class="php plain">, </code><code class="php string">'matricula'</code> <code class="php plain">=&gt; </code><code class="php string">'20411122'</code><code class="php plain">),</code></div><div class="line number14 index13 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'nombre'</code> <code class="php plain">=&gt; </code><code class="php string">'Mario'</code><code class="php plain">, </code><code class="php string">'apellido'</code> <code class="php plain">=&gt; </code><code class="php string">'Linares'</code><code class="php plain">, </code><code class="php string">'matricula'</code> <code class="php plain">=&gt; </code><code class="php string">'2049990'</code><code class="php plain">),</code></div><div class="line number15 index14 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'nombre'</code> <code class="php plain">=&gt; </code><code class="php string">'Viridianapaliragama'</code><code class="php plain">, </code><code class="php string">'apellido'</code> <code class="php plain">=&gt; </code><code class="php string">'Badillo'</code><code class="php plain">, </code><code class="php string">'matricula'</code> <code class="php plain">=&gt; </code><code class="php string">'20418855'</code><code class="php plain">),</code></div><div class="line number16 index15 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'nombre'</code> <code class="php plain">=&gt; </code><code class="php string">'Yadiramentoladosor'</code><code class="php plain">, </code><code class="php string">'apellido'</code> <code class="php plain">=&gt; </code><code class="php string">'García'</code><code class="php plain">, </code><code class="php string">'matricula'</code> <code class="php plain">=&gt; </code><code class="php string">'20443335'</code><code class="php plain">)</code></div><div class="line number17 index16 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">);</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="php variable">$pdf</code><code class="php plain">-&gt;tablaHorizontal(</code><code class="php variable">$miCabecera</code><code class="php plain">, </code><code class="php variable">$misDatos</code><code class="php plain">);</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="php variable">$pdf</code><code class="php plain">-&gt;Output(); </code><code class="php comments">//Salida al navegador</code></div><div class="line number22 index21 alt1"><code class="php plain">?&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>Y acá la salida:</p>
+<div data-shortcode="caption" id="attachment_796" style="width: 655px" class="wp-caption aligncenter"><a href="https://huguidugui.files.wordpress.com/2013/11/tutotablahorizontaconajuste.png"><img class="size-large wp-image-796" alt="Texto ajustado a las celdas" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/tutotablahorizontaconajuste.png" width="645" height="219"></a><p class="wp-caption-text">Texto ajustado a las celdas</p></div>
+<p>Este ejemplo es uno de los que más me ayudaron a solucionar el ajuste en celdas y con ello generar las tablas y reportes se hace más legible <span class="wp-smiley wp-emoji wp-emoji-wink" title=";)">;)</span></p>
+<p style="text-align:center;"><a href="https://huguidugui.wordpress.com/2013/11/25/fpdf-estilo-de-celdas/" target="_blank">Estilo de celda</a> &lt;— Anterior || Siguiente –&gt; <a href="https://huguidugui.wordpress.com/2013/11/27/fpdf-celdas-redondeadas/" target="_blank">Celdas redondeadas</a></p>
+<p style="text-align:center;"><strong>@huguidugui || ringhugos@gmail.com</strong></p>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<a class="wpa-about" href="https://wordpress.com/about-these-ads/" rel="nofollow">Acerca de estos anuncios</a>
+				<div class="u">
+					<script type="text/javascript">
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+					</script><div id="automattic-id-1072" data-section="26942" style="width:300px; height:250px;"><iframe width="300" height="250" style="border:none;width:300px;height:250px;" frameborder="0" scrolling="no" name="fif_slot_automattic-id-_automattic-id-1072" id="fif_slot_automattic-id-_automattic-id-1072" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent;margin:0%;&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe></div>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-790" class="share-twitter sd-button share-icon" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?share=twitter&amp;nb=1" target="_blank" title="Haz clic para compartir en Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-790" class="share-facebook sd-button share-icon" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?share=facebook&amp;nb=1" target="_blank" title="Comparte en Facebook"><span>Facebook</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-30658323-790-56c14ee69fc3d" data-src="//widgets.wp.com/likes/#blog_id=30658323&amp;post_id=790&amp;origin=huguidugui.wordpress.com&amp;obj_id=30658323-790-56c14ee69fc3d" data-name="like-post-frame-30658323-790-56c14ee69fc3d"><h3 class="sd-title">Me gusta:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Me gusta</span></span> <span class="loading">Cargando...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-30658323-790-56c14ee69fc3d" height="55px" width="100%" frameborder="0" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="784" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://huguidugui.wordpress.com/2013/11/25/fpdf-estilo-de-celdas/" title="FPDF:  Estilo de Celdas
+
+Ahora vamos a darle estilo a la tabla que estamos generando. A la cabecera le colocaremos un verde tenue al fondo de las celdas y el texto será blanco. A los datos de la tabla haremos haremos un &#39;truquillo&#39; para alternar entre filas. Es decir, una fila será color gris…" rel="nofollow" data-origin="790" data-position="0">FPDF:  Estilo de Celdas</a></span><span class="jp-relatedposts-post-context">En "FPDF"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="819" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://huguidugui.wordpress.com/2013/11/28/fpdf-reporte-dinamico/" title="FPDF: Reporte dinámico
+
+Ahora toca el turno a hacer un reporte dinámicamente extrayendo de la base de datos mediante un SELECT. Aunque pareciera más &quot;difícil&quot; por el hecho de obtener los datos de la base de datos... no lo es :). De hecho es tan sencillo como retornar un array asociativo, como el…" rel="nofollow" data-origin="790" data-position="1">FPDF: Reporte dinámico</a></span><span class="jp-relatedposts-post-context">En "FPDF"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="771" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://huguidugui.wordpress.com/2013/11/22/fpdf-reporte-estatico/" title="FPDF: Reporte estático
+
+Ahora les mostraré cómo hacer un reporte estático con un arreglo de arreglos, es decir, recibirá un arreglo de tipo: $misDatos = array( array(&#39;nombre&#39; =&amp;gt; &#39;Hugo&#39;, &#39;apellido&#39; =&amp;gt; &#39;Martínez&#39;, &#39;matricula&#39; =&amp;gt; &#39;20420423&#39;), array(&#39;nombre&#39; =&amp;gt; &#39;Araceli&#39;, &#39;apellido&#39; =&amp;gt; &#39;Morales&#39;, &#39;matricula&#39; =&amp;gt; &#39;204909&#39;), array(&#39;nombre&#39; =&amp;gt; &#39;Georgina&#39;, &#39;apellido&#39; =&amp;gt; &#39;Galindo&#39;, &#39;matricula&#39; =&amp;gt; &#39;2043442&#39;), array(&#39;nombre&#39;…" rel="nofollow" data-origin="790" data-position="2">FPDF: Reporte estático</a></span><span class="jp-relatedposts-post-context">En "FPDF"</span></p></div></div></div>
+		<div class="cl">&nbsp;</div>
+
+		
+			</div><!-- .entry -->
+
+				<div class="meta">
+			<div class="bg">
+				<span class="comments-num"><a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#comments">12 comentarios</a></span>
+				<p>Publicado por <a href="https://huguidugui.wordpress.com/author/huguidugui/" title="Entradas de huguidugui" rel="author">huguidugui</a> en 26 noviembre, 2013 en <a href="https://huguidugui.wordpress.com/category/php/fpdf/" rel="category tag">FPDF</a>, <a href="https://huguidugui.wordpress.com/category/php/" rel="category tag">PHP</a></p>
+			</div>
+			<div class="bot">&nbsp;</div>
+		</div><!-- .meta -->
+		<p class="tags">Etiquetas: <a href="https://huguidugui.wordpress.com/tag/fpdf/" rel="tag">FPDF</a>, <a href="https://huguidugui.wordpress.com/tag/reportes-fpdf/" rel="tag">reportes FPDF</a>, <a href="https://huguidugui.wordpress.com/tag/tablas-fpdf/" rel="tag">tablas FPDF</a></p>	</div>
+	<div class="post-navigation clear-fix">
+		<div class="nav-previous">
+			<a href="https://huguidugui.wordpress.com/2013/11/25/fpdf-estilo-de-celdas/" rel="prev"><span class="meta-nav">←</span> FPDF:  Estilo de&nbsp;Celdas</a>		</div>
+		<div class="nav-next">
+			<a href="https://huguidugui.wordpress.com/2013/11/27/fpdf-celdas-redondeadas/" rel="next">FPDF: Celdas redondeadas <span class="meta-nav">→</span></a>		</div>
+	</div><!-- .post-navigation -->
+
+	
+			<div id="comments">
+
+
+			<h3 id="comments-title">
+			12 Respuestas a “<em>FPDF: Ajustar texto en&nbsp;celdas</em>”			</h3>
+
+
+			<ol class="commentlist">
+					<li class="comment even thread-even depth-1 comment highlander-comment">
+		<div class="comment-body" id="comment-344">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/9f6270b4313f1f45d561620c48a4cc3f" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-9f6270b4313f1f45d561620c48a4cc3f-0">			<p class="author">
+				Azael			</p>
+			<p class="comment-meta">
+				28 marzo, 2014 at 07:15			</p>
+			<div class="comment-content">
+				
+				<p>Amigo quiero crear una tabla con filas dinamicas a partir de una consulta en mysql, ya probe tu ejemplo pero me hace todo en una sola fila <span class="wp-smiley wp-emoji wp-emoji-sad" title=":(">:(</span></p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=344#respond" onclick="return addComment.moveForm( &quot;comment-344&quot;, &quot;344&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a Azael">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 comment highlander-comment">
+		<div class="comment-body" id="comment-382">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/93dc400270267d4dfd8471a839090959" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-93dc400270267d4dfd8471a839090959-0">			<p class="author">
+				david			</p>
+			<p class="comment-meta">
+				19 mayo, 2014 at 17:44			</p>
+			<div class="comment-content">
+				
+				<p>amigo solo achoca las letras, queda horrible <span class="wp-smiley wp-emoji wp-emoji-sad" title=":(">:(</span></p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=382#respond" onclick="return addComment.moveForm( &quot;comment-382&quot;, &quot;382&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a david">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<ul class="children">
+	<li class="comment byuser comment-author-huguidugui comment-author-is-site-member bypostauthor even depth-2 comment highlander-comment">
+		<div class="comment-body" id="comment-383">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/1f66d080ef7f5adbddba9940b734ab42" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-1f66d080ef7f5adbddba9940b734ab42-0">			<p class="author">
+				<a href="https://huguidugui.wordpress.com/" rel="external nofollow" class="url">huguidugui</a>			</p>
+			<p class="comment-meta">
+				20 mayo, 2014 at 01:58			</p>
+			<div class="comment-content">
+				
+				<p>Has intentado hacer la celda más grande. Es que si es mucho texto no queda bien.</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=383#respond" onclick="return addComment.moveForm( &quot;comment-383&quot;, &quot;383&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a huguidugui">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 comment highlander-comment">
+		<div class="comment-body" id="comment-463">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/519574c71380cb734a7bbf9ab5a3c5d6" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-519574c71380cb734a7bbf9ab5a3c5d6-0">			<p class="author">
+				David Dejoy			</p>
+			<p class="comment-meta">
+				5 agosto, 2014 at 11:13			</p>
+			<div class="comment-content">
+				
+				<p>No funciona. si se coloca mas largo el texto se ve mal</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=463#respond" onclick="return addComment.moveForm( &quot;comment-463&quot;, &quot;463&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a David Dejoy">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<ul class="children">
+	<li class="comment byuser comment-author-huguidugui comment-author-is-site-member bypostauthor even depth-2 comment highlander-comment">
+		<div class="comment-body" id="comment-464">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/1f66d080ef7f5adbddba9940b734ab42" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-1f66d080ef7f5adbddba9940b734ab42-1">			<p class="author">
+				<a href="https://huguidugui.wordpress.com/" rel="external nofollow" class="url">huguidugui</a>			</p>
+			<p class="comment-meta">
+				5 agosto, 2014 at 11:50			</p>
+			<div class="comment-content">
+				
+				<p>Podrías enviar una imagen a <a href="mailto:ringhugos@gmail.com">ringhugos@gmail.com</a> de cómo te sale?<br>
+Te puedo ayudar <span class="wp-smiley wp-emoji wp-emoji-wink" title=";)">;)</span></p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=464#respond" onclick="return addComment.moveForm( &quot;comment-464&quot;, &quot;464&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a huguidugui">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 comment highlander-comment">
+		<div class="comment-body" id="comment-493">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/390306f0cf06c499b170119703c04eab" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-390306f0cf06c499b170119703c04eab-0">			<p class="author">
+				Rom1990ken			</p>
+			<p class="comment-meta">
+				9 octubre, 2014 at 18:09			</p>
+			<div class="comment-content">
+				
+				<p>Hola huguidugui fijate que estoy con el mismo problema que David Dejoy, seria que el texto se ajustara al ancho de la celda tipo como Excel que continua abajo</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=493#respond" onclick="return addComment.moveForm( &quot;comment-493&quot;, &quot;493&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a Rom1990ken">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<ul class="children">
+	<li class="comment byuser comment-author-huguidugui comment-author-is-site-member bypostauthor even depth-2 comment highlander-comment">
+		<div class="comment-body" id="comment-494">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/1f66d080ef7f5adbddba9940b734ab42" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-1f66d080ef7f5adbddba9940b734ab42-2">			<p class="author">
+				<a href="https://huguidugui.wordpress.com/" rel="external nofollow" class="url">huguidugui</a>			</p>
+			<p class="comment-meta">
+				10 octubre, 2014 at 06:14			</p>
+			<div class="comment-content">
+				
+				<p>Hola Rom <span class="wp-smiley wp-emoji wp-emoji-bigsmile" title=":D">:D</span></p>
+<p>Bueno, por el momento no he podido hacer un ejemplo de lo que mencionas.<br>
+Pero seguramente en el menú de “scripts” en el sitio oficial de la librería fpdf.org, ha de venir un ejemplo del que me comentas.<br>
+En cuanto tenga un “tiempito” prometo hacer un ejemplo de este tipo para el blog (Y)</p>
+<p>Saludos y gracias por leer blog <span class="wp-smiley wp-emoji wp-emoji-bigsmile" title=":D">:D</span></p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=494#respond" onclick="return addComment.moveForm( &quot;comment-494&quot;, &quot;494&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a huguidugui">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<ul class="children">
+	<li class="comment odd alt depth-3 comment highlander-comment">
+		<div class="comment-body" id="comment-496">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/390306f0cf06c499b170119703c04eab" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-390306f0cf06c499b170119703c04eab-1">			<p class="author">
+				Rom1990ken			</p>
+			<p class="comment-meta">
+				10 octubre, 2014 at 10:33			</p>
+			<div class="comment-content">
+				
+				<p>Hola de nuevo, gracias por la rapidez en responder, te lo agradeceria mucho estare pendiente…. saludos</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+							</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 comment highlander-comment">
+		<div class="comment-body" id="comment-648">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/3042b3c2d797ad3f425a755970461ed9" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-3042b3c2d797ad3f425a755970461ed9-0">			<p class="author">
+				Juan			</p>
+			<p class="comment-meta">
+				1 agosto, 2015 at 19:39			</p>
+			<div class="comment-content">
+				
+				<p>falta el GetStringWidth</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=648#respond" onclick="return addComment.moveForm( &quot;comment-648&quot;, &quot;648&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a Juan">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<ul class="children">
+	<li class="comment byuser comment-author-huguidugui comment-author-is-site-member bypostauthor odd alt depth-2 comment highlander-comment">
+		<div class="comment-body" id="comment-649">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/1f66d080ef7f5adbddba9940b734ab42" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-1f66d080ef7f5adbddba9940b734ab42-3">			<p class="author">
+				<a href="https://huguidugui.wordpress.com/" rel="external nofollow" class="url">huguidugui</a>			</p>
+			<p class="comment-meta">
+				3 agosto, 2015 at 21:04			</p>
+			<div class="comment-content">
+				
+				<p>Hola Juan, tú lo sabes implementar?</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=649#respond" onclick="return addComment.moveForm( &quot;comment-649&quot;, &quot;649&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a huguidugui">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 comment highlander-comment">
+		<div class="comment-body" id="comment-701">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/a58119904b3645d8077e9a1f9ed581bb" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-a58119904b3645d8077e9a1f9ed581bb-0">			<p class="author">
+				Scorpion			</p>
+			<p class="comment-meta">
+				2 diciembre, 2015 at 15:43			</p>
+			<div class="comment-content">
+				
+				<p>hola primero que nada gracias por el tutorial, pero sabras como hacerle para que cuando el texto sobrepasa la celda se corte, es decir que no quede todo junto como en tu ejemplo</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=701#respond" onclick="return addComment.moveForm( &quot;comment-701&quot;, &quot;701&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a Scorpion">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<ul class="children">
+	<li class="comment byuser comment-author-huguidugui comment-author-is-site-member bypostauthor odd alt depth-2 comment highlander-comment">
+		<div class="comment-body" id="comment-706">
+			<img alt="" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/1f66d080ef7f5adbddba9940b734ab42" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-1f66d080ef7f5adbddba9940b734ab42-4">			<p class="author">
+				<a href="https://huguidugui.wordpress.com/" rel="external nofollow" class="url">huguidugui</a>			</p>
+			<p class="comment-meta">
+				6 diciembre, 2015 at 18:20			</p>
+			<div class="comment-content">
+				
+				<p>Hola Scorpion, te sugiero que uses la librería de HTML2PDF que soluciona esto que comentas, tengo este mismo este tutorial de FPDF con la librería que te menciono. No es que FPDF esté desactualizado, sino lo que pasa es que funciona para documentos sencillos.</p>
+<p>Saludos y muchas por seguir esta serie de tutos, si te puedo ayudar en algo más específico por favor envíame un mail a <a href="mailto:ringhugos@gmail.com">ringhugos@gmail.com</a></p>
+<p>Saludos!</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/?replytocom=706#respond" onclick="return addComment.moveForm( &quot;comment-706&quot;, &quot;706&quot;, &quot;respond&quot;, &quot;790&quot; )" aria-label="Responder a huguidugui">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+			</ol>
+
+
+
+				<div id="respond" class="comment-respond js">
+			<h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#respond" style="display:none;">Cancelar respuesta</a></small></h3>				<form action="https://huguidugui.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="2b1d22669b"><input type="hidden" name="_wp_http_referer" value="/2013/11/26/fpdf-ajustar-texto-en-celdas/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: normal; width: 623px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Introduce tu comentario aquí..." placeholder="Introduce tu comentario aquí..." style="height: 36px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Introduce tus datos o haz clic en un icono para iniciar sesión:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#comment-form-guest" id="postas-guest" title="Invitado">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource(13).html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Correo <span class="required">(requerido)</span> <span class="nopublish">(La dirección no se hará pública)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Nombre <span class="required">(requerido)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Sitio web</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/wplogo.png" alt="Logo de WordPress.com" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> Estás comentando usando tu cuenta de WordPress.com. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;wordpress&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Imagen de Twitter" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> Estás comentando usando tu cuenta de Twitter. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;twitter&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Foto de Facebook" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> Estás comentando usando tu cuenta de Facebook. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;facebook&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> Estás comentando usando tu cuenta de Google+. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;googleplus&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancelar</a></div>
+		<p>Conectando a %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notificarme los nuevos comentarios por correo electrónico.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Publicar comentario"> <input type="hidden" name="comment_post_ID" value="790" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ed2a5f0aac"></p>
+<input type="hidden" name="genseq" value="1455509222">
+<p style="display: none;"></p>				<input type="hidden" id="ak_js" name="ak_js" value="1455509163949"></form>
+					</div><!-- #respond -->
+		<div style="clear: both"></div>
+</div><!-- #comments -->
+
+
+				</div><!-- END Content -->
+				<div id="sidebar">
+										<ul class="xoxo">
+						<li id="search-2" class="widget widget_search"><form action="https://huguidugui.wordpress.com/" id="searchform" method="get">
+	<label for="s" class="screen-reader-text">Buscar</label>
+	<div class="field-place">
+		<input type="text" class="field" id="s" name="s" value="">
+		<input type="submit" class="button" value="Search" id="searchsubmit">
+	</div>
+</form></li><li id="blog_subscription-3" class="widget widget_blog_subscription"><h4 class="widgettitle"><label for="subscribe-field">Sigue el blog por Email</label></h4>
+				<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="subscribe-blog">
+											<p>Introduce mail para seguir este Blog y recibir notificaciones</p>
+<p>Únete a otros 63 seguidores</p>
+						<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Introduce tu dirección de correo electrónico" value="" id="subscribe-field"></p>
+					
+					<p>
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="blog_id" value="30658323">
+						<input type="hidden" name="source" value="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-3">
+						<input type="hidden" id="_wpnonce" name="_wpnonce" value="ff88e5137c">						<input type="submit" value="Seguir">
+					</p>
+				</form>
+			
+</li>		<li id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widgettitle">Entradas recientes</h4>		<ul>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/12/06/obtener-el-sistema-operativo-con-php/">Obtener el Sistema Operativo con&nbsp;PHP</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/12/generar-gafetes-con-html2pdf/">Generar gafetes con&nbsp;HTML2PDF</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/07/pdf-desde-php-recibir-datos-desde-la-bd-55/">PDF desde PHP: Recibir datos desde la BD&nbsp;(5/5)</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/07/pdf-desde-php-obtener-datos-con-_post-45/">PDF desde PHP: Obtener datos con $_POST&nbsp;(4/5)</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/07/pdf-desde-php-encabezado-y-pie-de-pagina-35/">PDF desde PHP: Encabezado y Pie de página&nbsp;(3/5)</a>
+						</li>
+				</ul>
+		</li>		<li id="categories-2" class="widget widget_categories"><h4 class="widgettitle">Categorías</h4>		<ul>
+	<li class="cat-item cat-item-487974"><a href="https://huguidugui.wordpress.com/category/experiencias-de-vida/" title="Aqui expresará algunas de las experiencias importantes, curiosas o de relevanci para compartir con todos :D">Experiencias de vida</a>
+</li>
+	<li class="cat-item cat-item-2494225"><a href="https://huguidugui.wordpress.com/category/php/fpdf/">FPDF</a>
+</li>
+	<li class="cat-item cat-item-35366"><a href="https://huguidugui.wordpress.com/category/gimp/">GIMP</a>
+</li>
+	<li class="cat-item cat-item-43223279"><a href="https://huguidugui.wordpress.com/category/html-css-jquery/">HTML, CSS, JQUERY</a>
+</li>
+	<li class="cat-item cat-item-3127067"><a href="https://huguidugui.wordpress.com/category/php/html2pdf/">HTML2PDF</a>
+</li>
+	<li class="cat-item cat-item-3020"><a href="https://huguidugui.wordpress.com/category/joomla/" title="Tutorial para aprender a subir tu sitio a un dominio y hosting gratuito confiable.
+El sitio lo diseñarás y crearás con Joomla 2.5">Joomla</a>
+</li>
+	<li class="cat-item cat-item-458"><a href="https://huguidugui.wordpress.com/category/php/" title="Trabajando con PHP ">PHP</a>
+</li>
+	<li class="cat-item cat-item-22308540"><a href="https://huguidugui.wordpress.com/category/principiamos/">Principiamos</a>
+</li>
+	<li class="cat-item cat-item-325737"><a href="https://huguidugui.wordpress.com/category/puppy-linux/" title="Asi lo hice... en Puppy Linux :D">Puppy Linux</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://huguidugui.wordpress.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+</li>					</ul>
+				</div><!-- END Sidebar -->
+				<div class="cl">&nbsp;</div>					</div><!-- #main-bot -->
+				</div><!-- #main-top -->
+			</div><!-- #main -->
+			<div id="footer">
+				<p><a href="https://es.wordpress.com/?ref=footer_blog">Blog de WordPress.com.</a>
+<a href="https://wordpress.com/themes/choco/" title="Saber más sobre este tema">El tema Choco</a>.</p>
+
+				<p class="rss"><a href="https://huguidugui.wordpress.com/feed/rss/">Artículos (RSS)</a> y <a href="https://huguidugui.wordpress.com/comments/feed/">Comentarios (RSS)</a></p>
+			</div><!-- #footer -->
+		</div><!-- #page -->
+		<!-- wpcom_wp_footer -->
+<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-9f6270b4313f1f45d561620c48a4cc3f">
+	</div>
+	<div class="grofile-hash-map-93dc400270267d4dfd8471a839090959">
+	</div>
+	<div class="grofile-hash-map-1f66d080ef7f5adbddba9940b734ab42">
+	</div>
+	<div class="grofile-hash-map-519574c71380cb734a7bbf9ab5a3c5d6">
+	</div>
+	<div class="grofile-hash-map-390306f0cf06c499b170119703c04eab">
+	</div>
+	<div class="grofile-hash-map-3042b3c2d797ad3f425a755970461ed9">
+	</div>
+	<div class="grofile-hash-map-a58119904b3645d8077e9a1f9ed581bb">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Iniciando sesi\u00f3n\u2026","submittingText":"Publicando comentario\u2026","postCommentText":"Publicar comentario","connectingToText":"Conectando a %s","commentingAsText":"%1$s: Est\u00e1s comentando usando tu cuenta de %2$s.","logoutText":"Cerrar sesi\u00f3n","loginText":"Acceder","connectURL":"https:\/\/huguidugui.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/huguidugui.wordpress.com\/wp-login.php?action=logout&_wpnonce=f43e1462ec","homeURL":"https:\/\/huguidugui.wordpress.com\/","postID":"790","gravDefault":"identicon","enterACommentError":"Por favor, introduce un comentario","enterEmailError":"Por favor introduce tu direcci\u00f3n de correo electr\u00f3nico aqu\u00ed","invalidEmailError":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","enterAuthorError":"Por favor, introduce tu nombre aqu\u00ed","gravatarFromEmail":"Esta imagen se mostrar\u00e1 cuando dejes un comentario. Haz clic para cambiarla.","logInToExternalAccount":"Inicia sesi\u00f3n para usar los datos de una de estas cuentas.","change":"Cambiar","changeAccount":"Cambiar cuenta","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource(3)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -303px;">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Seguir</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Seguir “Así lo hice...”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Recibe cada nueva publicación en tu buzón de correo electrónico.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Únete a otros 63 seguidores</p>
+			<p><input type="email" name="email" placeholder="Introduce tu dirección de correo electrónico" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="30658323">
+			<input type="hidden" name="source" value="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="ff88e5137c"><input type="hidden" name="_wp_http_referer" value="/2013/11/26/fpdf-ajustar-texto-en-celdas/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Suscríbeme"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://es.wordpress.com/?ref=lof">Construye un sitio web con WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/huguidugui.wordpress.com\/2013\/11\/26\/fpdf-ajustar-texto-en-celdas\/":790};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<iframe src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text">A <span>%d</span> blogueros les gusta esto:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/form.js"></script>
+<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource(4)"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414g&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"es","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/saved_resource(5)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/w.js" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'30658323','blog_tz':'-6','user_lang':'es','blog_lang':'es','user_id':'0'}]);
+_stq.push(['view', {'blog':'30658323','v':'wpcom','tz':'-6','user_id':'0','post':'790','subd':'huguidugui'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdT1UeVRla1NLdXYlUnJLd195UG5zbmRmX043K0psUThlLm5TejZtV185bCVjVjZRa3MuY3JJcGNQT0VnMHMsUHdoOEtLaWs1UXh6YmNVMVlfVnhkMEImREx+Yismc1BKVktFWz9RQiZ2dWFxSk1wdTZKUU5BYl8sTWxZNHM9VFl8U11TdjlySGUxVytFZz1nb1d0fkVNVXNKVFBaPTd6Yl1bTmZvQnlNdCs1KzFDZTM0TU1qdVJTbURYflQlOGZXXyZtWE1uMytbdl1ycTd3VFRWby04M1dMQ2xHWV9tTGItak4mcE9kMHZKflhtMD1obFQvNltRLFJLR0pjdUNxOXc1UmNqZw=='}]);
+_stq.push([ 'clickTrackerInit', '30658323', '790' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>	
+<img src="./FPDF_ Ajustar texto en celdas _ Así lo hice..._files/g.gif" id="wpstats"></body></html>

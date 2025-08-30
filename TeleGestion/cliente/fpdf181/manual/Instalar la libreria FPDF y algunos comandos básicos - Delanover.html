@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-ES"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Instalar la libreria FPDF y algunos comandos básicos - Delanover</title><link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="alternate" type="application/rss+xml" title="Delanover RSS Feed" href="http://delanover.com/feed/">
+<link rel="pingback" href="http://delanover.com/xmlrpc.php">
+<link rel="stylesheet" href="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/style.css" type="text/css" media="screen">
+<!--[if lte IE 7]><link rel="stylesheet" href="http://delanover.com/wp-content/themes/arjuna-x/ie7.css" type="text/css" media="screen" /><![endif]-->
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="http://delanover.com/wp-content/themes/arjuna-x/ie6.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://delanover.com/wp-content/themes/arjuna-x/ie6.js"></script>
+<![endif]-->
+<style type="text/css">.contentWrapper .contentArea {width:670px;}.contentWrapper .sidebarsRight {width:250px;}.contentWrapper .sidebarsRight .sidebarLeft, .contentWrapper .sidebarsRight .sidebarRight {width:100px;}</style><link rel="alternate" type="application/rss+xml" title="Delanover » Feed" href="http://delanover.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Delanover » RSS de los comentarios" href="http://delanover.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Delanover » Instalar la libreria FPDF y algunos comandos básicos RSS de los comentarios" href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/feed/">
+		<script type="text/javascript" async="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/ga.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/delanover.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.3"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<script type="text/javascript" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/jquery.js"></script>
+<script type="text/javascript" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/default.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://delanover.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://delanover.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Your WordPress.com Account Xxxx Is Not Authorized to View the Stats of This Blog y No disponible por mantenimiento programado. Vuelve a comprobar el sitio en unos minutos" href="http://delanover.com/2011/03/18/your-wordpress-com-account-xxxx-is-not-authorized-to-view-the-stats-of-this-blog-y-no-disponible-por-mantenimiento-programado-vuelve-a-comprobar-el-sitio-en-unos-minutos/">
+<link rel="next" title="Intel Core i5" href="http://delanover.com/2011/03/30/intel-core-i5/">
+<meta name="generator" content="WordPress 4.3.3">
+<link rel="canonical" href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/">
+<link rel="shortlink" href="http://delanover.com/?p=635">
+</head>
+
+<body class="single single-post postid-635 single-format-standard gradient_blueish"><a id="skipToPosts" href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#contentArea">Ir a los artículos</a>
+<!--[if lte IE 6]>
+<div class="IENotice">This browser is outdated. Please <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">upgrade</a> your browser to enjoy this website to its fullest extent.</div>
+<![endif]-->
+<div class="pageContainer">
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4922886-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<div class="header">
+	<div class="headerBG"></div>
+		<div class="headerMenu1">
+					<ul id="headerMenu1"></ul>
+				<span class="clear"></span>
+	</div>
+		<div class="headerMain header_lightBlue">
+			<h1><a href="http://delanover.com/">Delanover</a></h1>
+		<span>Personal Blog</span>
+		
+	<div class="headerSearch headerSearchBottom">	<form method="get" action="http://delanover.com/">
+		<input type="text" class="searchQuery searchQueryIA" id="searchQuery" value="Buscar aquí..." name="s">
+		<input type="submit" class="searchButton" value="Encontrar">
+	</form>
+</div>
+</div>			<div class="headerMenu2 headerMenu2DS"><div class="helper"></div>
+	<ul id="headerMenu2"><li><a href="http://delanover.com/" class="homeIcon">Inicio</a></li><li class="page_item page-item-1712"><a href="http://delanover.com/personal-projects-small/">Own Projects (<b>Small size</b>)</a></li>
+<li class="page_item page-item-1662"><a href="http://delanover.com/personal-projects/">Own Projects (<u>Medium-Big size</u>)</a></li>
+<li class="page_item page-item-1413"><a href="http://delanover.com/about-me/">About me</a></li>
+</ul>	<span class="clear"></span>
+</div>	</div>
+	<div class="contentWrapper RS">
+		
+
+
+
+
+<div class="sidebars sidebarsRight">
+	<div class="t"><div></div></div>
+	<div class="i"><div class="i2"><div class="c">
+		<div class="sidebarIcons">
+	<div class="rssBtnExtended"><a class="primary" href="http://delanover.com/feed/"></a><div class="extended" id="rss-extended"><ul><li><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/feed/">Post Comments</a></li><li><a href="http://delanover.com/author/admin/feed/">Posts by <em></em></a></li><li class="separator"></li><li><a href="http://delanover.com/feed/">Latest Posts</a></li><li><a href="http://delanover.com/comments/feed/">Latest Comments</a></li></ul></div></div>	<a class="twitterBtn" href="http://twitter.com/jmlipman"></a>		</div>		<div>
+				<div id="recent-posts-4" class="sidebarBox widget_recent_entries">		<h4><span>Last entries</span></h4>		<ul>
+					<li>
+				<a href="http://delanover.com/2015/11/27/nhk-web-easy-reader-with-direct-dictionary-content-retrieval/">NHK Web Easy Reader with direct dictionary content retrieval</a>
+						</li>
+					<li>
+				<a href="http://delanover.com/2015/11/26/solved-opencv-python-error-dll-load-failed-the-specified-module-could-not-be-found/">[Solved] OpenCV + Python, error “DLL load failed: The specified module could not be found”</a>
+						</li>
+					<li>
+				<a href="http://delanover.com/2015/06/05/2011/">Artificial Intelligence</a>
+						</li>
+					<li>
+				<a href="http://delanover.com/2015/01/29/the-chicken-egg-problem-of-recognition-in-ai/">The chicken-egg problem of recognition in AI</a>
+						</li>
+					<li>
+				<a href="http://delanover.com/2015/01/18/sumobot-project/">Sumobot Project</a>
+						</li>
+				</ul>
+		</div><div id="text-5" class="sidebarBox widget_text"><h4><span>[English] Categories</span></h4>			<div class="textwidget"><ul>
+<li class="cat-item cat-item-180"><a title="Ver todas las entradas archivadas en Information (EN)" href="http://delanover.com/category/information/">Information (EN)</a>
+</li>
+<li class="cat-item cat-item-176">
+<a title="Ver todas las entradas archivadas en Projects (EN)" href="http://delanover.com/category/projects/">Projects (EN)</a>
+</li>
+<li class="cat-item cat-item-181">
+<a title="Ver todas las entradas archivadas en Author&#39;s thoughts (EN)" href="http://delanover.com/category/authors-thoughts/">Author's thoughts (EN)</a>
+</li>
+<li class="cat-item cat-item-185" style="margin-left:20px;">
+<a title="Ver todas las entradas archivadas en Artificial Intelligence" href="http://delanover.com/category/authors-thoughts/artificial-intelligence/">Artificial Intelligence</a>
+</li>
+<li class="cat-item cat-item-183" style="margin-left:20px;">
+<a title="Ver todas las entradas archivadas en International Experience" href="http://delanover.com/category/authors-thoughts/international-experience/">International Experience</a>
+</li>
+<li class="cat-item cat-item-184" style="margin-left:20px;">
+<a title="Ver todas las entradas archivadas en Technology" href="http://delanover.com/category/authors-thoughts/technology/">Technology</a>
+</li>
+</ul></div>
+		</div><div id="text-6" class="sidebarBox widget_text"><h4><span>[Spanish] Categories</span></h4>			<div class="textwidget"><ul>
+<li class="cat-item cat-item-47">
+<a title="Ver todas las entradas archivadas en Información (es)" href="http://delanover.com/category/informacion/">Información (es)</a>
+</li>
+<li class="cat-item cat-item-14">
+<a title="Ver todas las entradas archivadas en Programación Web (es)" href="http://delanover.com/category/programacion-web/">Programación Web (es)</a>
+</li>
+<li class="cat-item cat-item-175">
+<a title="Ver todas las entradas archivadas en Proyectos (es)" href="http://delanover.com/category/proyectos/">Proyectos (es)</a>
+</li>
+<li class="cat-item cat-item-9">
+<a title="Ver todas las entradas archivadas en Seguridad (es)" href="http://delanover.com/category/seguridad/">Seguridad (es)</a>
+</li>
+</ul></div>
+		</div>		</div>
+						<div>
+			<div id="tag_cloud-5" class="sidebarBox widget_tag_cloud"><h4><span>Tags</span></h4><div class="tagcloud"><a href="http://delanover.com/tag/analizador/" class="tag-link-134" title="1 tema" style="font-size: 8pt;">Analizador</a>
+<a href="http://delanover.com/tag/antirrobo/" class="tag-link-119" title="1 tema" style="font-size: 8pt;">Antirrobo</a>
+<a href="http://delanover.com/tag/api/" class="tag-link-144" title="5 temas" style="font-size: 18.3384615385pt;">API</a>
+<a href="http://delanover.com/tag/aplicacion-web/" class="tag-link-133" title="1 tema" style="font-size: 8pt;">aplicacion web</a>
+<a href="http://delanover.com/tag/autobracketing/" class="tag-link-48" title="1 tema" style="font-size: 8pt;">Autobracketing</a>
+<a href="http://delanover.com/tag/captcha/" class="tag-link-99" title="2 temas" style="font-size: 11.8769230769pt;">Captcha</a>
+<a href="http://delanover.com/tag/complementos/" class="tag-link-107" title="1 tema" style="font-size: 8pt;">Complementos</a>
+<a href="http://delanover.com/tag/compras/" class="tag-link-97" title="2 temas" style="font-size: 11.8769230769pt;">Compras</a>
+<a href="http://delanover.com/tag/css/" class="tag-link-22" title="2 temas" style="font-size: 11.8769230769pt;">CSS</a>
+<a href="http://delanover.com/tag/codigo-abierto/" class="tag-link-120" title="1 tema" style="font-size: 8pt;">Código Abierto</a>
+<a href="http://delanover.com/tag/error/" class="tag-link-104" title="1 tema" style="font-size: 8pt;">Error</a>
+<a href="http://delanover.com/tag/exif/" class="tag-link-131" title="1 tema" style="font-size: 8pt;">Exif</a>
+<a href="http://delanover.com/tag/fedora/" class="tag-link-123" title="1 tema" style="font-size: 8pt;">Fedora</a>
+<a href="http://delanover.com/tag/firefox/" class="tag-link-106" title="2 temas" style="font-size: 11.8769230769pt;">Firefox</a>
+<a href="http://delanover.com/tag/forensic/" class="tag-link-71" title="1 tema" style="font-size: 8pt;">Forensic</a>
+<a href="http://delanover.com/tag/forensics/" class="tag-link-129" title="1 tema" style="font-size: 8pt;">Forensics</a>
+<a href="http://delanover.com/tag/foros/" class="tag-link-12" title="1 tema" style="font-size: 8pt;">Foros</a>
+<a href="http://delanover.com/tag/generador-online/" class="tag-link-132" title="1 tema" style="font-size: 8pt;">generador online</a>
+<a href="http://delanover.com/tag/geolocalizacion/" class="tag-link-121" title="3 temas" style="font-size: 14.4615384615pt;">Geolocalizacion</a>
+<a href="http://delanover.com/tag/google/" class="tag-link-10" title="2 temas" style="font-size: 11.8769230769pt;">Google</a>
+<a href="http://delanover.com/tag/grub/" class="tag-link-124" title="2 temas" style="font-size: 11.8769230769pt;">Grub</a>
+<a href="http://delanover.com/tag/guitar-pro/" class="tag-link-179" title="1 tema" style="font-size: 8pt;">Guitar Pro</a>
+<a href="http://delanover.com/tag/imacros/" class="tag-link-105" title="1 tema" style="font-size: 8pt;">iMacros</a>
+<a href="http://delanover.com/tag/intel/" class="tag-link-100" title="1 tema" style="font-size: 8pt;">Intel</a>
+<a href="http://delanover.com/tag/javascript/" class="tag-link-39" title="1 tema" style="font-size: 8pt;">JavaScript</a>
+<a href="http://delanover.com/tag/mac/" class="tag-link-122" title="1 tema" style="font-size: 8pt;">MAC</a>
+<a href="http://delanover.com/tag/navegacion-segura/" class="tag-link-117" title="1 tema" style="font-size: 8pt;">navegación segura</a>
+<a href="http://delanover.com/tag/olimex/" class="tag-link-178" title="1 tema" style="font-size: 8pt;">Olimex</a>
+<a href="http://delanover.com/tag/openstreetmap/" class="tag-link-174" title="2 temas" style="font-size: 11.8769230769pt;">OpenStreetMap</a>
+<a href="http://delanover.com/tag/paquetes/" class="tag-link-135" title="1 tema" style="font-size: 8pt;">Paquetes</a>
+<a href="http://delanover.com/tag/php/" class="tag-link-23" title="8 temas" style="font-size: 22pt;">PHP</a>
+<a href="http://delanover.com/tag/prestashop/" class="tag-link-98" title="2 temas" style="font-size: 11.8769230769pt;">Prestashop</a>
+<a href="http://delanover.com/tag/prey/" class="tag-link-118" title="1 tema" style="font-size: 8pt;">Prey</a>
+<a href="http://delanover.com/tag/proteccion-infantil/" class="tag-link-139" title="1 tema" style="font-size: 8pt;">Protección Infantil</a>
+<a href="http://delanover.com/tag/qubes/" class="tag-link-137" title="1 tema" style="font-size: 8pt;">Qubes</a>
+<a href="http://delanover.com/tag/seguridad/" class="tag-link-186" title="2 temas" style="font-size: 11.8769230769pt;">Seguridad (es)</a>
+<a href="http://delanover.com/tag/spoofing/" class="tag-link-46" title="1 tema" style="font-size: 8pt;">Spoofing</a>
+<a href="http://delanover.com/tag/ssl/" class="tag-link-109" title="2 temas" style="font-size: 11.8769230769pt;">SSL</a>
+<a href="http://delanover.com/tag/transmision-de-datos/" class="tag-link-37" title="1 tema" style="font-size: 8pt;">Transmisión de Datos</a>
+<a href="http://delanover.com/tag/twitter/" class="tag-link-108" title="6 temas" style="font-size: 19.8461538462pt;">Twitter</a>
+<a href="http://delanover.com/tag/vodafone/" class="tag-link-125" title="2 temas" style="font-size: 11.8769230769pt;">Vodafone</a>
+<a href="http://delanover.com/tag/windows-8/" class="tag-link-88" title="2 temas" style="font-size: 11.8769230769pt;">Windows 8</a>
+<a href="http://delanover.com/tag/wireless/" class="tag-link-136" title="4 temas" style="font-size: 16.6153846154pt;">Wireless</a>
+<a href="http://delanover.com/tag/wireshark/" class="tag-link-128" title="2 temas" style="font-size: 11.8769230769pt;">Wireshark</a>
+<a href="http://delanover.com/tag/wordpress/" class="tag-link-103" title="2 temas" style="font-size: 11.8769230769pt;">Wordpress</a></div>
+</div>		</div>
+	</div></div></div>
+	<div class="b"><div></div></div>
+</div>
+
+<div class="contentArea" id="contentArea">
+				
+	<div id="post-635" class="post post-635 type-post status-publish format-standard hentry category-programacion-web tag-php">
+		<div class="postHeader">
+	<h1 class="postTitle"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/" title="Permalink a Instalar la libreria FPDF y algunos comandos básicos"><span>Instalar la libreria FPDF y algunos comandos básicos</span></a></h1>
+	<div class="bottom"><div>
+		<span class="postDate">25 marzo, 2011</span>
+				<span class="postAuthor"><a href="http://delanover.com/author/admin/" title="Entradas de lipman" rel="author">lipman</a></span>
+						<a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comments" class="postCommentLabel"><span>16 comentarios</span></a>
+			</div></div>
+</div>		
+		<div class="postContent">
+			<h2>FPDF (Free PDF)</h2>
+<p>Esta libreria nos permite crear de una manera muy cómoda y sencilla un documento PDF bastante personalizado: cabeceras, pies de página, colores, imágenes (jpeg, png, gif), saltos de línea, saltos de página y diferentes fonts y codificaciones entre otras cosas.<br>
+Podemos realizar incluso referencias al propio documento y poderosas tablas, las cuales pueden venir muy bien para resultados de consultas en bases de datos.</p>
+<ul>
+<font size="4px">
+<li>Instalación</li>
+</font><p><font size="4px"></font>
+</p></ul>
+<p>Descargamos la versión más reciente desde su <a href="http://www.fpdf.org/es/download.php" target="_blank">página oficial</a>, en la cual nos encontraremos un archivo comprimido zip con tutoriales y explicaciones de cada función en particular (también disponibles en la página oficial). El archivo más importante del zip es el llamado fpdf.php aunque también necesitaremos tener en nuestro directorio local, el archivo fpdf.css y la carpeta de font.</p>
+<ul>
+<font size="4px">
+<li>Errores comunes</li>
+</font><p><font size="4px"></font>
+</p></ul>
+<p>Antes de empezar a jugar con esta libreria, comentaré un error que puede aparecernos, para de esta manera, poder evitarlo. Puede que nos saltase un error que nos dijera “Cannot modify header information – headers already sent by …”. Esto es solucionable si en el script en donde vamos a realizar el pdf no introducimos nada antes ni después de los tags de inicio y fin de php, es decir, nada antes ni después de “<!--?, ?-->, <!--?php" (ni siquiera los tags de <html-->, , o cualquier otro). Esto puede ser debido a que esta libreria toca la cabecera de nuestro documento, por lo que no debe de haber nada antes de tal.<br>
+Otro error común, sobre todo para los castellano parlantes, puede ser el uso de terminadas letras, como la ñ o las vocales acentuadas. Para ello, suponiendo que nuestro texto se encuentre en una variable, la parsearemos de la siguiente manera:</p>
+<pre lang="php">$str = utf8_decode($str);
+</pre>
+<p>Por otra parte, puede que sea un caracter “extraño” como el símbolo del euro. Por ello, para estos casos, los definiremos de la siguiente forma:</p>
+<pre lang="php">define('EURO', chr(128));
+
+$str = "Ejemplo de € y " . EURO;
+// En nuestro PDF nos muestra lo siguiente: "Ejemplo de ? Y €"
+</pre>
+<ul>
+<font size="4px">
+<li>Introducción</li>
+</font><p><font size="4px"></font>
+</p></ul>
+<p>Para indicar que estamos usando esta libreria, tenemos que hacer referencia al archivo fpdf.php de la siguiente forma:</p>
+<pre lang="php">require("fpdf.php");
+</pre>
+<p>Por otra parte, para iniciar la creación del documento PDF, tenemos que indicarlo del siguiente modo:</p>
+<pre lang="php">$pdf=new FPDF();
+</pre>
+<p>El funcionamiento a grosso modo es muy simple. Vamos añadiendo páginas y en cada una añadimos lo que queramos. Cuando queramos editar propiedades del tipo colores o fuentes de texto, tenemos que declararlas justo antes de usarlas. Es decir, si queremos hacer dos líneas de texto con fuentes distintas, primero tenemos que declarar las propiedades de la primera fuente, luego escribir la primera línea, declarar las propiedades de la segunda y escribirla.<br>
+De igual modo, si alguna vez escribimos algo que ocupe más de una página, esta se añade automáticamente, aunque disponemos de una función (<em>Addpage</em>) para añadir páginas, la cual nos permite acabar de escribir en una página o poner páginas en blanco.<br>
+Hay algunas propiedades también, como las cabeceras o los piés de página, que no basta con declarar lo que queremos, sino que hay que realizar la propia función como veremos más adelante. De la misma forma que anteriormente hemos indicado que se iniciaba la configuración del documento pdf, para exportarlo y que salga como tal, dispondremos de otra función que tendremos que aplicar al final (<em>Output</em>).</p>
+<ul>
+<font size="4px">
+<li>Funciones básicas</li>
+</font><p><font size="4px"></font>
+</p></ul>
+<p><em>Addpage </em>(añade una página), <em>Cell </em>(crea una celda), <em>setFont </em>(declaramos un estilo de fuente), <em>Ln </em>(salto de línea), <em>Image </em>(añade una imagen), <em>setFillColor </em>(establece un color de relleno), <em>setTextColor </em>(establece un color para el texto), <em>SetX </em>(posicionar en el eje X), <em>SetY </em>(posicionar en el eje Y), <em>GetX </em>(obtener posición en el eje X), <em>GetY </em>(obtener posición en el eje Y). Ejemplo:</p>
+<pre lang="php"><!--?
+require("fpdf.php");
+
+$pdf=new FPDF();
+//Cargamos y creamos el nuevo objeto.
+
+$pdf--->AddPage();
+//Añadimos una página.
+
+$pdf-&gt;Addpage();
+//Añadimos otra página. De esta manera, la primera quedará en blanco.
+
+$pdf-&gt;SetFont('Arial','B',16);
+//Seleccionamos la font de nuestros textos. Serial Arial, Bold, de tamaño 16. Ver fonts permitidas en la línea
+//104 del archivo fpdf.php. Los estilos permitidos son B (negrita), U (subrayado), I (cursiva), vacio (normal).
+
+$pdf-&gt;Cell(10, 20, "Texto interior", 1);
+//Creamos una celda de 10 de ancho, 20 de alto, con ese texto en su interior, y 1 de borde.
+
+
+$pdf-&gt;setFillColor(10, 200, 14);
+//Declaramos un color de relleno RGB (verde claro).
+
+$pdf-&gt;Ln(30);
+//Salto de línea de tamaño 30.
+
+$pdf-&gt;Cell(50, 20, "Otro texto", 2, 2, L, true);
+//50 de ancho, 20 de alto, con ese texto, 2 de borde, L de alineado (landscape), y true es el relleno definido antes
+//El segundo 2, nos permite decidir dónde irá el elemento posterior a este. En caso de estar en 2, irá debajo.
+// Si hay un 1, al comienzo de la línea siguiente. Si hay un 0, irá a la derecha.
+
+$variable = $pdf-&gt;GetY();
+// obtenemos la posición Y.
+
+$pdf-&gt;SetX($variable);
+//Declaro que quiero que el siguiente elemento tenga de posición X, lo que tenía de posición Y.
+
+$pdf-&gt;Cell(5, 5, $variable, 1);
+//Creamos esta celda.
+
+$pdf-&gt;Image("google.jpg", 80, 0, 70, 40);
+//Ponemos una imagen. El segundo y el tercer parámetro son las coordenadas X e Y, los dos siguientes 
+//son la anchura y la altura respectivamente.
+
+$pdf-&gt;Output();
+//Función que nos permite obtener el PDF.
+?&gt;
+</pre>
+<p><a href="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/1-2.jpg" target="_blank"><img src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/1-2.jpg" width="400"></a></p>
+<ul>
+<font size="4px">
+<li>Funciones más interesantes</li>
+</font><p><font size="4px"></font>
+</p></ul>
+<p>En este apartado trataremos de hacer una cabecera y un pie de página para que salgan en todas las páginas. Para esto, hay que extender la clase FPHP como veremos posteriormente de manera que habrá que crear las funciones <em>Footer </em>y <em>Header</em>. Por otra parte, aprenderemos a referenciar objetos dentro del propio documento y establecer el número de páginas totales y actual.</p>
+<pre lang="php"><!--?php
+require('fpdf/fpdf.php');
+
+class PDF extends FPDF
+{
+//Creamos un Class, y dentro de él, extendiendo la función FPDF
+//creamos la función Header y Footer
+function Header()
+{
+    $this--->SetFont('Arial','B',15);
+    //Declaramos una fuente
+    $this-&gt;Cell(30,10,'Titulo',1,0,'C');
+    //Titulo
+    $this-&gt;Ln(20);
+	//Salto de línea
+}
+
+//Pie de página
+function Footer()
+{
+    
+    $this-&gt;SetY(-15);
+    //Posición: a 1,5 cm del final
+    $this-&gt;SetFont('Arial','I',8);
+    
+    $this-&gt;Cell(0,10,'Página '.$this-&gt;PageNo().'/{nb}',0,0,'C');
+	//PageNo nos muestra el número de página actual
+	//El "/{nb}" es para que nos muestre el número de páginas máximo
+	//de tal forma que se quede del tipo "Página 1/2"
+	//Esto es debido a la función posterior "AliasNbPages"
+}
+}
+
+//Creación del objeto de la clase heredada
+$pdf=new PDF();
+$pdf-&gt;AliasNbPages();
+//Es la función que nos declara un Alias por defecto para 
+//obtener el número de páginas máximo
+
+$pdf-&gt;AddPage();
+$link = $pdf-&gt;AddLink();
+//Establecemos el link
+
+$pdf-&gt;Write(5, "Pulsar aquí", $link);
+//Al pulsar en ese texto, nos linkeamos gracias al link declarado anteriormente
+
+$pdf-&gt;AddPage();
+$pdf-&gt;AddPage();
+$pdf-&gt;SetLink($link, 70);
+//Establecemos el link a 1,5 centímetros (eje Y)
+
+$pdf-&gt;Output();
+?&gt;
+</pre>
+<p>Para finalizar, decir que hay multitud de funciones para un uso más intensivo y completo de esta libreria que se encuentran en la parte de “Manual” su <a href="http://www.fpdf.org/es/doc/index.php" target="_blank">página web</a>. En estas breves páginas he intentado escribir las más importantes y útiles para un sencillo uso.</p>
+<p>Saludos, lipman.</p>
+		</div>
+		<div class="postLinkPages"><div>
+					</div></div>
+		<div class="postFooter"><div class="r"></div>
+	<div class="left">
+		<span class="postCategories"><a href="http://delanover.com/category/programacion-web/" rel="category tag">Programación Web (es)</a></span>
+				<span class="postTags"><a href="http://delanover.com/tag/php/" rel="tag">PHP</a></span>
+			</div>
+	</div>	</div>
+		<div class="postComments" id="comments">
+		<div class="commentHeader">
+	<ul class="tabs" id="arjuna_commentTabs">
+			<li><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#_comments" class="comments active"><span><i>Comentarios (16)</i></span></a></li>
+			</ul>
+	
+	<div class="buttons">
+			<a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#respond" class="btnReply btn"><span>Dejar un comentario</span></a>
+			</div>
+</div>
+
+<div class="commentBody">
+		<div id="arjuna_comments" class="contentBox active">
+					<ul class="commentList commentListAlt">
+					<li class="comment even thread-even depth-1" id="comment-922">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/71b93af8d69e7e92b7f0141c11d5a0a2" srcset="http://1.gravatar.com/avatar/71b93af8d69e7e92b7f0141c11d5a0a2?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-922">#1</a> | Escrito por <a href="http://cyberexplorador.wordpress.com/" class="authorLink">Hugo Mora</a> hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-922">
+					<p>Gracias me sirvió bastante.</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-923">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/899961cb841449ebd73df453e8068b2a" srcset="http://2.gravatar.com/avatar/899961cb841449ebd73df453e8068b2a?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-923">#2</a> | Escrito por <a href="http://delanover.com/" class="authorLink">lipman</a> hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-923">
+					<p>Me alegro mucho hombre, ese fue mi propósito =)</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="comment-982">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/5152b4f57003c9b2396f6cdc85a2d2bd" srcset="http://2.gravatar.com/avatar/5152b4f57003c9b2396f6cdc85a2d2bd?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-982">#3</a> | Escrito por Herm hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-982">
+					<p>Necesito como conectar la base de datos con el archivo pdf.</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-983">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/5152b4f57003c9b2396f6cdc85a2d2bd" srcset="http://2.gravatar.com/avatar/5152b4f57003c9b2396f6cdc85a2d2bd?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-983">#4</a> | Escrito por Herm hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-983">
+					<p>es decir cual es la estructura para traerme la base de datos al archivo pdf, lo necesito para poder imprimirlos, lo h intentado pero me sale este error: </p>
+<p>Warning: Cannot modify header information – headers already sent by (output started at C:\xampp\htdocs\siv\clases\prueba.php:1) in C:\xampp\htdocs\siv\clases\fpdf.php on line 1028<br>
+FPDF error: Some data has already been output to browser, can’t send PDF file.</p>
+<p>espero me puedan ayudar!!</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-984">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/899961cb841449ebd73df453e8068b2a" srcset="http://2.gravatar.com/avatar/899961cb841449ebd73df453e8068b2a?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-984">#5</a> | Escrito por <a href="http://delanover.com/" class="authorLink">lipman</a> hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-984">
+					<p>No entiendo muy bien a qué te refieres.</p>
+<p>Te puedes conectar a la BD con las propias funciones de PHP y obtener los resultados de las consultas, solo que en lugar de sacarlas por pantalla con un echo o algo así, las pones en el PDF usando las funciones de FPDF.</p>
+<p>Igual el error ese lo puedes solucionar quitando las cabeceras del archivo php, es decir, que todo el archivo php empiece y acabe por &lt; ? y ?&gt; y no haya nada de .</p>
+<p>Un saludo</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-985">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/5152b4f57003c9b2396f6cdc85a2d2bd" srcset="http://2.gravatar.com/avatar/5152b4f57003c9b2396f6cdc85a2d2bd?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-985">#6</a> | Escrito por Herm hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-985">
+					<p>Umm, bueno si estoy mostrando con un echo, este es mas o menos el ejemplo del codigo: </p>
+<p>Equipos Existentes</p>
+<p>Equipos Existentes</p>
+<p>    Cod<br>
+    Nombre<br>
+	Descripcion<br>
+	Fecha de Ingreso</p>
+<p>		addPage();</p>
+<p>  $obj-&gt;setFont(“Arial”,”B”,13, “c”);</p>
+<p>  $obj-&gt;cell(200, 5, “Listado de Equipos Existentes”);</p>
+<p>  $obj-&gt;output();<br>
+   ?&gt;</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="comment-986">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/5152b4f57003c9b2396f6cdc85a2d2bd" srcset="http://2.gravatar.com/avatar/5152b4f57003c9b2396f6cdc85a2d2bd?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-986">#7</a> | Escrito por Herm hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-986">
+					<p>Equipos Existentes</p>
+<p>Equipos Existentes</p>
+<p>    Cod<br>
+    Nombre<br>
+	Descripcion<br>
+	Fecha de Ingreso</p>
+<p>		addPage();</p>
+<p>  $obj-&gt;setFont(“Arial”,”B”,13, “c”);</p>
+<p>  $obj-&gt;cell(200, 5, “Listado de Equipos Existentes”);</p>
+<p>  $obj-&gt;output();<br>
+   ?&gt;</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-987">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/5152b4f57003c9b2396f6cdc85a2d2bd" srcset="http://2.gravatar.com/avatar/5152b4f57003c9b2396f6cdc85a2d2bd?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-987">#8</a> | Escrito por Herm hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-987">
+					<p>No me toma el codigo pero lo que estoy hacien es haciendo la conexion en la parte de la cabecera y luego haciendole el llamado al pdf.</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-988">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/899961cb841449ebd73df453e8068b2a" srcset="http://2.gravatar.com/avatar/899961cb841449ebd73df453e8068b2a?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-988">#9</a> | Escrito por <a href="http://delanover.com/" class="authorLink">lipman</a> hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-988">
+					<p>Sigo sin entenderte demasiado, vamos a ver:</p>
+<p>-Te conectas a la base de datos<br>
+-Obtienes los resultados (en variables por ejemplo)<br>
+-Posteriormente, aplicas el resto del codigo:</p>
+<p>addPage();<br>
+$obj-&gt;setFont(“Arial”,”B”,13, “c”);<br>
+$obj-&gt;cell(200, 5, “Listado de Equipos Existentes”);<br>
+$obj-&gt;cell(X, Y, $cod);<br>
+$obj-&gt;cell(X, Y, $nombre);<br>
+[…]<br>
+$obj-&gt;output();<br>
+?&gt;</p>
+<p>Un saludo</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1659">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/49797cd40564d9ae4710a76fae803ad9" srcset="http://1.gravatar.com/avatar/49797cd40564d9ae4710a76fae803ad9?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-1659">#10</a> | Escrito por ArtuRex hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-1659">
+					<p>Buenas …, actualmente estoy usando FPDF y  se ejecuta perfectamente, el problema es que en ocasiones cuando enciendo el servidor y las demás (clientes)computadoras envían impresiones a una impresora Epson LX 300+II que esta con el servidor, el PDF se gira 90º al momento de imprimir.  Es muy raro tengo que reiniciar el servidor y recién funciona o en el caso de los clientes tengo q eliminar la impresora y agregarla nuevamente, la red está en sistema operativo Windows 7. Cuál es el problema<br>
+SetMargins(0, 0,0);<br>
+$pdf-&gt;AddFont(‘Calibri’,”,’calibrib.php’);<br>
+$pdf-&gt;AddPage();<br>
+$pdf-&gt;SetFont(‘Calibri’,”,11);</p>
+<p>$pdf-&gt;Text(25,20,’COMPROBANTE DE PAGO *’);</p>
+<p>$pdf-&gt;Text(95,80,’INGRESO’);</p>
+<p>$pdf-&gt;Text(80,20,’Nro:’.$nroBoucher);</p>
+<p>$pdf-&gt;Text(1,25,’PRESTAMO’);<br>
+$pdf-&gt;Text(1,30,’CUENTA’);<br>
+$pdf-&gt;Text(1,35,’MOVIMIENTO’);<br>
+$pdf-&gt;Text(1,40,’SOCIO’);<br>
+$pdf-&gt;Text(1,45,’CUOTA’);<br>
+$pdf-&gt;Text(1,50,’M. FIJADO’);<br>
+$pdf-&gt;Text(1,55,’F. FIJADA’);<br>
+$pdf-&gt;Text(1,60,’M. PAGADO’);<br>
+$pdf-&gt;Text(1,65,’F. PAGADO’);<br>
+$pdf-&gt;Text(1,70,’OPERADOR’);</p>
+<p>//TITULOS DEL LADO DERECHO<br>
+$pdf-&gt;Text(30,25,’:’.$tipoPrestamo);<br>
+$pdf-&gt;Text(30,30,’:’.$codCuentaPrestamo);<br>
+$pdf-&gt;Text(30,35,’:’.$nroPrestamo);<br>
+$pdf-&gt;Text(30,40,’:’.$cliente);<br>
+$pdf-&gt;Text(30,45,’:’.$nroCuota);<br>
+$pdf-&gt;Text(30,50,’:’.$moneda.$montoProgamado);<br>
+$pdf-&gt;Text(30,55,’:’.date(“d/m/Y”,strtotime( $fechaProgramado)));<br>
+$pdf-&gt;Text(30,60,’:’.$moneda.$montoPagado);<br>
+$pdf-&gt;Text(30,65,’:’.date(“d/m/Y – H:i”,strtotime( $fechaPagado)));<br>
+$pdf-&gt;Text(30,70,’:’.$operador);</p>
+<p>$pdf-&gt;Output();</p>
+<p>?&gt;</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-1660">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/899961cb841449ebd73df453e8068b2a" srcset="http://2.gravatar.com/avatar/899961cb841449ebd73df453e8068b2a?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-1660">#11</a> | Escrito por <a href="http://delanover.com/" class="authorLink">lipman</a> hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-1660">
+					<p>Te comento: en ese código no hay nada acerca de la orientación de la página en PDF. Esto quiere decir que probablemente el problema no sea de aquí. Puedes comprobarlo ejecutándolo en un navegador web, o en cualquier sitio que te permita previsualizarlo realmente.</p>
+<p>Yo apostaria a que es un problema de configuración de la impresora, que al agregarla, o al reiniciar, se reseteen algunas opciones y vuelva a estar como originalmente deberia. De la misma forma, ya todos sabemos que desde la propia impresora puedes elegir la forma de imprimir, asi que como te digo, apostaria a que el problema no viene de aquí.</p>
+<p>Un saludo.</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2072">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/6eb0c4956b5989c532e72b3d053c9806" srcset="http://0.gravatar.com/avatar/6eb0c4956b5989c532e72b3d053c9806?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-2072">#12</a> | Escrito por <a href="http://programaestudiantil/" class="authorLink">Roberth Rojas</a> hace 4 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-2072">
+					<p>Buenos Dias<br>
+Necesito la colaboración cuando utilizo $pdf-&gt;Output(); no me genera el pdf en el explorador que estoy utilizando, pero si lo Direcciono a una unidad del equipo me genera el pdf sin ningun problema por ejemplo   $pdf-&gt;Output(“D:CitacionComite.pdf”);</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="comment-3814">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/d29b161d34d417d1d1b40e88c87460ce" srcset="http://1.gravatar.com/avatar/d29b161d34d417d1d1b40e88c87460ce?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-3814">#13</a> | Escrito por luis hace 3 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-3814">
+					<p>para solo mostrar la fecha actual usando fpdf mas un texto (ejemplo: En Santiago, a fecha)<br>
+seria algo como esto<br>
+$pdf-&gt;Text (“En Santiago, a)<br>
+$pdf-&gt;Text(30,55,’:’.date(‘d/m/Y’)</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7683">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/718ff62c557c573ea6381210c3483209" srcset="http://1.gravatar.com/avatar/718ff62c557c573ea6381210c3483209?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-7683">#14</a> | Escrito por angel hace 3 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-7683">
+					<p>Hola, estoy empezando en este ambiente del fpdf  no se si me puedan ayudar se los agradecere, requiero hacer un que al dar click en un boton aparezca un pdf con un cuestionario (plantilla no cambia) pero con cada respuesta que se conecte a mi bd mysql para obtener información del usuario que la contesto  si me pueden ayudar  me contactan, gracias</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="comment-7684">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/718ff62c557c573ea6381210c3483209" srcset="http://1.gravatar.com/avatar/718ff62c557c573ea6381210c3483209?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-7684">#15</a> | Escrito por angel hace 3 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-7684">
+					<p>mi mail es <a href="mailto:angelus19@hotmail.es">angelus19@hotmail.es</a></p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10688">
+		<img alt="" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/af9622fa5781eb84270631faec74d00e" srcset="http://1.gravatar.com/avatar/af9622fa5781eb84270631faec74d00e?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40">		<div class="message">
+			<div class="t"><div></div></div>
+			<div class="i"><div class="i2">
+				<span class="title"><a href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#comment-10688">#16</a> | Escrito por lisset hace 3 años.</span>
+				<span class="links">
+														</span>
+								<div id="commentbody-10688">
+					<p>Hola, quisiera porfavor si me pueden si existe alguna funcion para insertar listas como estas en un documento pdf y un ejemplo</p>
+<p>Documentos<br>
+Archivos</p>
+<p>Les agradeceria su rpta, gracias!</p>
+				</div>
+			</div></div>
+			<div class="b"><div></div></div>
+		</div>
+	</li><!-- #comment-## -->
+			</ul>
+			</div>
+		</div>
+
+<div class="commentReply" id="respond">
+	<div class="replyHeader">
+		<h4>Dejar un comentario</h4>
+					<div id="cancel-comment-reply" class="cancelReply"><a rel="nofollow" id="cancel-comment-reply-link" class="btnCancel btn" href="http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/#respond" style="display:none;"><span>Réplica cancelada</span></a></div>
+			</div>
+			<p style="margin-bottom:40px;">Debes estar <a href="http://delanover.com/wp-login.php?redirect_to=http://delanover.com/2011/03/25/instalar-la-libreria-fpdf-y-algunos-comandos-basicos/">conectado</a> para dejar un comentario.</p>
+				</div>	</div>
+	
+			<div class="pagination"><div>
+	<a href="http://delanover.com/2011/03/18/your-wordpress-com-account-xxxx-is-not-authorized-to-view-the-stats-of-this-blog-y-no-disponible-por-mantenimiento-programado-vuelve-a-comprobar-el-sitio-en-unos-minutos/" rel="prev" class="newer"><span>Artículo anterior</span></a>	<a href="http://delanover.com/2011/03/30/intel-core-i5/" rel="next" class="older"><span>Artículo siguiente</span></a></div></div>		
+
+
+	</div>
+
+		<div class="clear"></div>
+	</div><!-- .contentWrapper -->
+	<div class="footer">
+		<div class="footerTop"></div>
+		<div class="footerContainer">
+			<a href="http://www.wordpress.org/" class="icon1"><img src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/wordpressIcon.png" width="20" height="20" alt="Powered by WordPress"></a>
+			<a class="icon2"><img src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/SRSIcon.png" width="31" height="18" alt="Web Design by SRS Solutions"></a>
+			<span class="copyright">© 2016 Delanover</span>
+			<span class="design"><a href="http://www.srssolutions.com/en/services/design/website_design/wordpress_design" title="Design by SRS Solutions">Design by <em>SRS Solutions</em></a></span>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div><!-- .pageContainer -->
+
+<script type="text/javascript" src="./Instalar la libreria FPDF y algunos comandos básicos - Delanover_files/comment-reply.min.js"></script>
+
+
+</body></html>

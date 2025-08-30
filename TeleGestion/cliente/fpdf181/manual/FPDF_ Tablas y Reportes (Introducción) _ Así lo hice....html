@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/ -->
+<html lang="es"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>FPDF: Tablas y Reportes (Introducción) | Así lo hice...</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://huguidugui.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Así lo hice... » Feed" href="https://huguidugui.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Así lo hice... » RSS de los comentarios" href="https://huguidugui.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Así lo hice... » FPDF: Tablas y Reportes (Introducción) RSS de los comentarios" href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<link rel="stylesheet" id="all-css-0" href="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-1" href="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-2" href="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource(1)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"No se ha completado su suscripcion, por favor intentelo de nuevo con una direcci\u00f3n de correo valida."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource(2)"></script>
+<link rel="stylesheet" id="all-css-0" href="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://huguidugui.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="FPDF: posiciones (x, y)" href="https://huguidugui.wordpress.com/2013/11/15/fpdf-posiciones-x-y/">
+<link rel="next" title="FPDF: Cabeceras y Datos" href="https://huguidugui.wordpress.com/2013/11/21/fpdf-cabeceras-datos/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/">
+<link rel="shortlink" href="http://wp.me/p24DD5-bW">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Fhuguidugui.wordpress.com%2F2013%2F11%2F20%2Ffpdf-tablas-y-reportes-introduccion%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Fhuguidugui.wordpress.com%2F2013%2F11%2F20%2Ffpdf-tablas-y-reportes-introduccion%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="FPDF: Tablas y Reportes (Introducción)">
+<meta property="og:url" content="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/">
+<meta property="og:description" content="En esta serie de mini entradas, les presento cómo hacer tablas, empezando por lo más básico e ir agregando código para darle más estilo y funcionalidad a nuestras tablas. Siempre me ha gustado empe...">
+<meta property="article:published_time" content="2013-11-20T17:43:55+00:00">
+<meta property="article:modified_time" content="2013-11-28T20:05:43+00:00">
+<meta property="og:site_name" content="Así lo hice...">
+<meta property="og:image" content="https://huguidugui.files.wordpress.com/2013/11/carpetatrabajo.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image" content="https://huguidugui.files.wordpress.com/2013/11/carpetatrabajo.png?w=240">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/cc2f6b78cc275b6b427ca9f81662b3ea?s=16" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/cc2f6b78cc275b6b427ca9f81662b3ea?s=16" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/957eebc6dfff68db0aea9715759c99cf?s=114">
+<link rel="openid.server" href="https://huguidugui.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://huguidugui.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://huguidugui.wordpress.com/osd.xml" title="Así lo hice...">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="Así lo hice..."><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Documentar experiencias informáticas y otros chunches"><meta name="msapplication-task" content="name=Suscribir;action-uri=https://huguidugui.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/cc2f6b78cc275b6b427ca9f81662b3ea?s=16"><meta name="msapplication-task" content="name=Registrar un blog gratuito;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Soporte de WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Foros de WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="FPDF: Tablas y Reportes (Introducción) | Así lo hice... en WordPress.com">
+<meta name="description" content="En esta serie de mini entradas, les presento cómo hacer tablas, empezando por lo más básico e ir agregando código para darle más estilo y funcionalidad a nuestras tablas. Siempre me ha gustado empezar desde un ejemplo concreto y simple e ir escalando el ejemplo; con esto, podemos conocer cómo funciona desde el principio, después…">
+		<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/amzn_ads.js"></script>
+		<script type="text/javascript">
+		try { amznads.getAds("3033"); } catch(e) { /* ignore */ }
+		</script><script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/bid"></script>
+		<script type="text/javascript">
+		try {
+			var a9_p = amznads.getKeys(),
+			_ipw_custom = {
+				wordAds: '0',
+				adSafe: '0',
+				domain: 'huguidugui.wordpress.com',
+				pageURL: 'https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/'
+			};
+			if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+		} catch(e) {}
+		</script>		<!-- IPONWEB header script -->
+		<script type="text/javascript">
+			window.__ATA = {
+				scriptSrc: '//s.pubmine.com/showad.js',
+				slotPrefix: 'automattic-id-',
+				initAd: function(o) {
+					var o = o || {},
+						g = window,
+						d = g.document,
+						wr = d.write,
+						id = g.__ATA.id();
+					wr.call(d, '<div id="' + id + '" data-section="' + (o.sectionId || 0) + '"' + (o.type ? ('data-type="' + o.type + '"') : '') + ' ' + (o.forcedUrl ? ('data-forcedurl="' + o.forcedUrl + '"') : '') + ' style="width:' + (o.width || 0) + 'px; height:' + (o.height || 0) + 'px;">');
+					g.__ATA.displayAd(id);
+					wr.call(d, '</div>');
+				},
+				displayAd: function(id) {
+					window.__ATA.ids = window.__ATA.ids || {};
+					window.__ATA.ids[id] = 1;
+				},
+				customParams: _ipw_custom,
+				id: function() {
+					return window.__ATA.slotPrefix + (parseInt(Math.random() * 10000, 10) + 1 + (new Date()).getMilliseconds());
+				}
+			};
+			(function(d, ata) {
+				var pr = "https:" === d.location.protocol ? "https:" : "http:",
+					src = pr + ata.scriptSrc,
+					st = "text/javascript";
+				d.write('<scr' + 'ipt type="' + st + '" src="' + src + '"><\/scr' + 'ipt>');
+			})(window.document, window.__ATA);
+		</script><script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/showad.js"></script>
+		<script type="text/javascript">
+		jQuery(window).ready(function () {
+			jQuery("a.wpa-about").text("Acerca de estos anuncios");
+		});
+		</script><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/ga.js"></script>
+<script type="text/javascript" async="" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource(3)"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/services.css"><script type="text/javascript" async="" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource(4)"></script></head>
+<body class="single single-post postid-740 single-format-standard mp6 customizer-styles-applied color-default highlander-enabled highlander-light">
+
+<div id="page">
+	<div id="header" class="clear-fix">
+		<div id="logo">
+						<h3 id="site-title">
+				<span>
+					<a href="https://huguidugui.wordpress.com/" title="Así lo hice…" rel="home">Así lo hice…</a>
+				</span>
+			</h3>
+			<div class="description">Documentar experiencias informáticas y otros chunches</div>
+
+		</div><!-- #logo -->
+
+		<div id="nav">
+			<ul id="menu-apoyar-el-blog" class="menu"><li id="menu-item-866" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-866"><a href="https://huguidugui.wordpress.com/">Inicio</a></li>
+<li id="menu-item-867" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-867"><a href="https://huguidugui.wordpress.com/about/">Apoyar el blog</a></li>
+</ul>		</div><!-- #nav -->
+
+	</div><!-- #header -->
+
+	<div id="main">
+		<a href="https://huguidugui.wordpress.com/feed/rss/" id="rss-link">RSS</a>
+		<div id="main-top">
+			<div id="main-bot" class="clear-fix">
+				<div id="content">
+	<div class="post-navigation clear-fix">
+		<div class="nav-previous">
+			<a href="https://huguidugui.wordpress.com/2013/11/15/fpdf-posiciones-x-y/" rel="prev"><span class="meta-nav">←</span> FPDF: posiciones (x,&nbsp;y)</a>		</div>
+		<div class="nav-next">
+			<a href="https://huguidugui.wordpress.com/2013/11/21/fpdf-cabeceras-datos/" rel="next">FPDF: Cabeceras y&nbsp;Datos <span class="meta-nav">→</span></a>		</div>
+	</div><!-- .post-navigation -->
+
+	<div class="post post-740 type-post status-publish format-standard hentry category-fpdf category-php tag-fpdf tag-reportes-fpdf tag-tablas-fpdf">
+
+		
+				<h2 class="post-title">
+							FPDF: Tablas y Reportes&nbsp;(Introducción)					</h2>
+	
+				<div class="date">
+			<div class="bg">
+									<span class="day">20</span>
+					<span>Nov</span>
+							</div>
+		</div><!-- .date -->
+	
+	<div class="entry">
+		
+		<p style="text-align:justify;">En esta serie de mini entradas, les presento cómo hacer tablas, empezando por lo más básico e ir agregando código para darle más estilo y funcionalidad a nuestras tablas. Siempre me ha gustado empezar desde un ejemplo concreto y simple e ir escalando el ejemplo; con esto, podemos conocer cómo funciona desde el principio, después podemos agregar funciones que vayan encapsulando código con nuevas funcionalidades.</p>
+<p style="text-align:justify;">La tablas en FPDF se basan en repetir en un ciclo el método Cell( ) tantas veces como sea necesario. Además algo importante es que para que la tabla sea vertical u horizontal, basta cambiar un parámetro del método Cell( ) para que cada celda se coloque una debajo de la otra (vertical) o que cada celda se posicione a la derecha de la anterior (horizontal).</p>
+<p style="text-align:justify;">El método que usaremos frecuentemente es Cell( ), &nbsp;así que te recomiendo ver los parámetros que recibe este método. Para más detalle de éstos, puedes verlos en la opción de ‘Manual’ en la página oficial de <a href="http://www.fpdf.org/" target="_blank">fpdf.org</a>. El único parámetro para que la tabla sea vertical u horizontal, será cambiando el parámetro <strong>posición actual</strong>, ya sea 0 ó 2 <span class="wp-smiley wp-emoji wp-emoji-smile" title=":)">:)</span></p>
+<p style="text-align:center;">Cell(ancho, alto, texto, borde, <strong>posición actual</strong>, alineación del texto)</p>
+<p style="text-align:justify;"><span id="more-740"></span></p>
+<p style="text-align:justify;"><span style="font-size:13px;line-height:1.4;">El código para las <strong>cabeceras</strong> y <strong>datos</strong> de una tabla se hacen exactamente de la misma forma, es decir: el método recibe un array, se itera sobre éste y por cada elemento se generará una celda con Cell( ); celda en la cual se colocará un elemento de dicho array recibido. Generalmente, las <span style="text-decoration:underline;">cabeceras</span> les entra un array estático y a los <span style="text-decoration:underline;">datos</span> un array que se produjo de una llamada a la base de datos o de cualquier otra forma dinámica. (mostraré ambos casos <span class="wp-smiley wp-emoji wp-emoji-wink" title=";)">;)</span> )</span></p>
+<p style="text-align:justify;">El uso de las <strong>tablas verticales</strong> se usan, por lo regular, para mostrar datos concretos como por ejemplo de un solo registro que se obtuvo de la base de datos y las <strong>tablas horizontales</strong> se usan para hacer reportes, los cuales tienen varios registros, también producido de una consulta a la base de datos.</p>
+<p style="text-align:justify;">Otro aspecto importante es la <strong>posición</strong> de las tablas. En este ejemplo puedes darte una idea general de las <a href="https://huguidugui.wordpress.com/2013/11/15/fpdf-posiciones-x-y/" target="_blank">posiciones (X, Y) de una hoja tamaño A4</a>&nbsp;con un código que dibuja rectángulos y las medidas de en parejas (X, Y).</p>
+<p style="text-align:justify;">En esta ocasión se trabajará de la siguiente forma: en nuestra carpeta de trabajo tendremos un <span class="skimlinks-unlinked">index.php</span> (donde se usarán objetos), <span class="skimlinks-unlinked">PDF.php</span> (la clase PDF con los métodos que usaremos) y la carpeta de la librería fpdf como se muestra en la imagen:</p>
+<div data-shortcode="caption" id="attachment_745" style="width: 290px" class="wp-caption aligncenter"><a href="https://huguidugui.files.wordpress.com/2013/11/carpetatrabajo.png"><img class="size-full wp-image-745" alt="Carpeta de trabajo " src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/carpetatrabajo.png"></a><p class="wp-caption-text">Carpeta de trabajo</p></div>
+<p style="text-align:justify;">Al archivo <span class="skimlinks-unlinked">PDF.php</span> se le irán agregando poco a poco los distintos métodos, razón por la cual separé para mejor visibilidad del código.</p>
+<ul>
+<li><a href="https://huguidugui.wordpress.com/2013/11/21/fpdf-cabeceras-datos/" target="_blank">Cabeceras, Datos</a></li>
+<li><a href="https://huguidugui.wordpress.com/2013/11/22/fpdf-reporte-estatico/" target="_blank">Reporte Estático</a></li>
+<li><a href="https://huguidugui.wordpress.com/2013/11/25/fpdf-estilo-de-celdas/" target="_blank">Estilo de celda</a></li>
+<li><a href="https://huguidugui.wordpress.com/2013/11/26/fpdf-ajustar-texto-en-celdas/" target="_blank">Ajustar texto a la celda</a></li>
+<li><a href="https://huguidugui.wordpress.com/2013/11/27/fpdf-celdas-redondeadas/" target="_blank">Celdas redondeadas</a></li>
+<li><a href="https://huguidugui.wordpress.com/2013/11/28/fpdf-reporte-dinamico/" target="_blank">Reporte Dinámico</a></li>
+</ul>
+<p>Ojalá sea de mucha ayuda como lo ha sido para mí todos estos ejemplos que con el tiempo he recopilado en el proceso de aprendizaje.</p>
+<p style="text-align:center;"><strong>@huguidugui || ringhugos@<span class="skimlinks-unlinked">gmail.com</span></strong></p>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<a class="wpa-about" href="https://wordpress.com/about-these-ads/" rel="nofollow">Acerca de estos anuncios</a>
+				<div class="u">
+					<script type="text/javascript">
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+					</script><div id="automattic-id-9963" data-section="26942" style="width:300px; height:250px;"><iframe width="300" height="250" style="border:none;width:300px;height:250px;" frameborder="0" scrolling="no" name="fif_slot_automattic-id-_automattic-id-9963" id="fif_slot_automattic-id-_automattic-id-9963" src="javascript:&quot;&lt;html&gt;&lt;body style=&#39;background:transparent;margin:0%;&#39;&gt;&lt;/body&gt;&lt;/html&gt;&quot;"></iframe></div>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-740" class="share-twitter sd-button share-icon" href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/?share=twitter&amp;nb=1" target="_blank" title="Haz clic para compartir en Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-740" class="share-facebook sd-button share-icon" href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/?share=facebook&amp;nb=1" target="_blank" title="Comparte en Facebook"><span>Facebook<span class="share-count">6</span></span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-30658323-740-56c14e36016da" data-src="//widgets.wp.com/likes/#blog_id=30658323&amp;post_id=740&amp;origin=huguidugui.wordpress.com&amp;obj_id=30658323-740-56c14e36016da" data-name="like-post-frame-30658323-740-56c14e36016da"><h3 class="sd-title">Me gusta:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Me gusta</span></span> <span class="loading">Cargando...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-30658323-740-56c14e36016da" height="55px" width="100%" frameborder="0" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Relacionado</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="750" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://huguidugui.wordpress.com/2013/11/21/fpdf-cabeceras-datos/" title="FPDF: Cabeceras y Datos
+
+Empezando con este ejemplo concreto y sencillo les mostraré cómo hacer una cabecera de una tabla, es decir, poner los títulos que llevará su tabla; así mostrar los datos que llevará la tabla. A su vez, teniendo ambos métodos por separado, se pueden juntar en uno solo para tener un método…" rel="nofollow" data-origin="740" data-position="0">FPDF: Cabeceras y Datos</a></span><span class="jp-relatedposts-post-context">En "FPDF"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="784" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://huguidugui.wordpress.com/2013/11/25/fpdf-estilo-de-celdas/" title="FPDF:  Estilo de Celdas
+
+Ahora vamos a darle estilo a la tabla que estamos generando. A la cabecera le colocaremos un verde tenue al fondo de las celdas y el texto será blanco. A los datos de la tabla haremos haremos un &#39;truquillo&#39; para alternar entre filas. Es decir, una fila será color gris…" rel="nofollow" data-origin="740" data-position="1">FPDF:  Estilo de Celdas</a></span><span class="jp-relatedposts-post-context">En "FPDF"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="810" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://huguidugui.wordpress.com/2013/11/27/fpdf-celdas-redondeadas/" title="FPDF: Celdas redondeadas
+
+En la librería FPDF como tal, no existen las celdas con borde redondeado pero gracias a la misma comunidad que comparte sus códigos, hubo quien modificó el método Rect (que dibuja un rectángulo) para que se generará rectángulos con borde redondeado. En el futuro habrá quien modifique y comparta el…" rel="nofollow" data-origin="740" data-position="2">FPDF: Celdas redondeadas</a></span><span class="jp-relatedposts-post-context">En "FPDF"</span></p></div></div></div>
+		<div class="cl">&nbsp;</div>
+
+		
+			</div><!-- .entry -->
+
+				<div class="meta">
+			<div class="bg">
+				<span class="comments-num"><a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#comments">2 comentarios</a></span>
+				<p>Publicado por <a href="https://huguidugui.wordpress.com/author/huguidugui/" title="Entradas de huguidugui" rel="author">huguidugui</a> en 20 noviembre, 2013 en <a href="https://huguidugui.wordpress.com/category/php/fpdf/" rel="category tag">FPDF</a>, <a href="https://huguidugui.wordpress.com/category/php/" rel="category tag">PHP</a></p>
+			</div>
+			<div class="bot">&nbsp;</div>
+		</div><!-- .meta -->
+		<p class="tags">Etiquetas: <a href="https://huguidugui.wordpress.com/tag/fpdf/" rel="tag">FPDF</a>, <a href="https://huguidugui.wordpress.com/tag/reportes-fpdf/" rel="tag">reportes FPDF</a>, <a href="https://huguidugui.wordpress.com/tag/tablas-fpdf/" rel="tag">tablas FPDF</a></p>	</div>
+	<div class="post-navigation clear-fix">
+		<div class="nav-previous">
+			<a href="https://huguidugui.wordpress.com/2013/11/15/fpdf-posiciones-x-y/" rel="prev"><span class="meta-nav">←</span> FPDF: posiciones (x,&nbsp;y)</a>		</div>
+		<div class="nav-next">
+			<a href="https://huguidugui.wordpress.com/2013/11/21/fpdf-cabeceras-datos/" rel="next">FPDF: Cabeceras y&nbsp;Datos <span class="meta-nav">→</span></a>		</div>
+	</div><!-- .post-navigation -->
+
+	
+			<div id="comments">
+
+
+			<h3 id="comments-title">
+			2 Respuestas a “<em>FPDF: Tablas y Reportes&nbsp;(Introducción)</em>”			</h3>
+
+
+			<ol class="commentlist">
+					<li class="comment even thread-even depth-1 comment highlander-comment">
+		<div class="comment-body" id="comment-704">
+			<img alt="" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/photo.jpg" class="avatar avatar-70" height="70" width="70">			<p class="author">
+				<a href="https://plus.google.com/109785211300770472896" rel="external nofollow" class="url">Sebastián Pozo</a>			</p>
+			<p class="comment-meta">
+				5 diciembre, 2015 at 15:21			</p>
+			<div class="comment-content">
+				
+				<p>Hola, espero aun este vigente el post una pregunta como puedo combinar celdas???, es posible hacer eso con los tutoriales que posteaste.<br>
+Es decir yo quiero que el titulo de mi tabla (que es extenso) este en una celda y abajo de esa color dos celdas verticalmente es decir dos columnas. Espero me entiendas</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/?replytocom=704#respond" onclick="return addComment.moveForm( &quot;comment-704&quot;, &quot;704&quot;, &quot;respond&quot;, &quot;740&quot; )" aria-label="Responder a Sebastián Pozo">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<ul class="children">
+	<li class="comment byuser comment-author-huguidugui comment-author-is-site-member bypostauthor odd alt depth-2 comment highlander-comment">
+		<div class="comment-body" id="comment-705">
+			<img alt="" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/1f66d080ef7f5adbddba9940b734ab42" class="avatar avatar-70 grav-hashed grav-hijack" height="70" width="70" id="grav-1f66d080ef7f5adbddba9940b734ab42-0">			<p class="author">
+				<a href="https://huguidugui.wordpress.com/" rel="external nofollow" class="url">huguidugui</a>			</p>
+			<p class="comment-meta">
+				6 diciembre, 2015 at 18:17			</p>
+			<div class="comment-content">
+				
+				<p>Hola Sebastián, esta serie de posts con la librería FPDF la dejé porque algunos de mis lectores me pidieron que la dejara porque es un la librería fácil para documentos sencillos. Pero si lo que requieres es más complicado de hacer, puedes ver la otra serie de posts con HTML2PDF que hereda todo de FPDF y que soluciona muchos de los problemas que mencionas.</p>
+<p>Si te puedo ayudar con más, por favor envíame un mail a <a href="mailto:ringhugos@gmail.com">ringhugos@gmail.com</a> y con mucho gusto lo haré.</p>
+<p>Saludos (Y) y gracias por seguir el blog</p>
+				<div class="alignleft"></div>
+
+			</div>
+			<div class="reply">
+				<a rel="nofollow" class="comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/?replytocom=705#respond" onclick="return addComment.moveForm( &quot;comment-705&quot;, &quot;705&quot;, &quot;respond&quot;, &quot;740&quot; )" aria-label="Responder a huguidugui">Responder</a>			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+			</ol>
+
+
+
+				<div id="respond" class="comment-respond js">
+			<h3 id="reply-title" class="comment-reply-title">Deja un comentario <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#respond" style="display:none;">Cancelar respuesta</a></small></h3>				<form action="https://huguidugui.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="2b1d22669b"><input type="hidden" name="_wp_http_referer" value="/2013/11/20/fpdf-tablas-y-reportes-introduccion/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: normal; width: 623px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Introduce tu comentario aquí..." placeholder="Introduce tu comentario aquí..." style="height: 36px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Introduce tus datos o haz clic en un icono para iniciar sesión:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#comment-form-guest" id="postas-guest" title="Invitado">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource(15).html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Correo <span class="required">(requerido)</span> <span class="nopublish">(La dirección no se hará pública)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Nombre <span class="required">(requerido)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Sitio web</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/wplogo.png" alt="Logo de WordPress.com" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> Estás comentando usando tu cuenta de <span class="skimlinks-unlinked">WordPress.com</span>. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;wordpress&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Imagen de Twitter" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> Estás comentando usando tu cuenta de Twitter. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;twitter&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Foto de Facebook" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> Estás comentando usando tu cuenta de Facebook. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;facebook&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> Estás comentando usando tu cuenta de Google+. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;googleplus&#39; );">Cerrar&nbsp;sesión</a>&nbsp;/&nbsp;<a href="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Cambiar</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancelar</a></div>
+		<p>Conectando a %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notificarme los nuevos comentarios por correo electrónico.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Publicar comentario"> <input type="hidden" name="comment_post_ID" value="740" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b5d79ff14b"></p>
+<input type="hidden" name="genseq" value="1455509046">
+<p style="display: none;"></p>				<input type="hidden" id="ak_js" name="ak_js" value="1455508989519"></form>
+					</div><!-- #respond -->
+		<div style="clear: both"></div>
+</div><!-- #comments -->
+
+
+				</div><!-- END Content -->
+				<div id="sidebar">
+										<ul class="xoxo">
+						<li id="search-2" class="widget widget_search"><form action="https://huguidugui.wordpress.com/" id="searchform" method="get">
+	<label for="s" class="screen-reader-text">Buscar</label>
+	<div class="field-place">
+		<input type="text" class="field" id="s" name="s" value="">
+		<input type="submit" class="button" value="Search" id="searchsubmit">
+	</div>
+</form></li><li id="blog_subscription-3" class="widget widget_blog_subscription"><h4 class="widgettitle"><label for="subscribe-field">Sigue el blog por Email</label></h4>
+				<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="subscribe-blog">
+											<p>Introduce mail para seguir este Blog y recibir notificaciones</p>
+<p>Únete a otros 63 seguidores</p>
+						<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Introduce tu dirección de correo electrónico" value="" id="subscribe-field"></p>
+					
+					<p>
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="blog_id" value="30658323">
+						<input type="hidden" name="source" value="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-3">
+						<input type="hidden" id="_wpnonce" name="_wpnonce" value="ff88e5137c">						<input type="submit" value="Seguir">
+					</p>
+				</form>
+			
+</li>		<li id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widgettitle">Entradas recientes</h4>		<ul>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/12/06/obtener-el-sistema-operativo-con-php/">Obtener el Sistema Operativo con&nbsp;PHP</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/12/generar-gafetes-con-html2pdf/">Generar gafetes con&nbsp;HTML2PDF</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/07/pdf-desde-php-recibir-datos-desde-la-bd-55/">PDF desde PHP: Recibir datos desde la BD&nbsp;(5/5)</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/07/pdf-desde-php-obtener-datos-con-_post-45/">PDF desde PHP: Obtener datos con $_POST&nbsp;(4/5)</a>
+						</li>
+					<li>
+				<a href="https://huguidugui.wordpress.com/2015/04/07/pdf-desde-php-encabezado-y-pie-de-pagina-35/">PDF desde PHP: Encabezado y Pie de página&nbsp;(3/5)</a>
+						</li>
+				</ul>
+		</li>		<li id="categories-2" class="widget widget_categories"><h4 class="widgettitle">Categorías</h4>		<ul>
+	<li class="cat-item cat-item-487974"><a href="https://huguidugui.wordpress.com/category/experiencias-de-vida/" title="Aqui expresará algunas de las experiencias importantes, curiosas o de relevanci para compartir con todos :D">Experiencias de vida</a>
+</li>
+	<li class="cat-item cat-item-2494225"><a href="https://huguidugui.wordpress.com/category/php/fpdf/">FPDF</a>
+</li>
+	<li class="cat-item cat-item-35366"><a href="https://huguidugui.wordpress.com/category/gimp/">GIMP</a>
+</li>
+	<li class="cat-item cat-item-43223279"><a href="https://huguidugui.wordpress.com/category/html-css-jquery/">HTML, CSS, JQUERY</a>
+</li>
+	<li class="cat-item cat-item-3127067"><a href="https://huguidugui.wordpress.com/category/php/html2pdf/">HTML2PDF</a>
+</li>
+	<li class="cat-item cat-item-3020"><a href="https://huguidugui.wordpress.com/category/joomla/" title="Tutorial para aprender a subir tu sitio a un dominio y hosting gratuito confiable.
+El sitio lo diseñarás y crearás con Joomla 2.5">Joomla</a>
+</li>
+	<li class="cat-item cat-item-458"><a href="https://huguidugui.wordpress.com/category/php/" title="Trabajando con PHP ">PHP</a>
+</li>
+	<li class="cat-item cat-item-22308540"><a href="https://huguidugui.wordpress.com/category/principiamos/">Principiamos</a>
+</li>
+	<li class="cat-item cat-item-325737"><a href="https://huguidugui.wordpress.com/category/puppy-linux/" title="Asi lo hice... en Puppy Linux :D">Puppy Linux</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://huguidugui.wordpress.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+</li>					</ul>
+				</div><!-- END Sidebar -->
+				<div class="cl">&nbsp;</div>					</div><!-- #main-bot -->
+				</div><!-- #main-top -->
+			</div><!-- #main -->
+			<div id="footer">
+				<p><a href="https://es.wordpress.com/?ref=footer_blog">Blog de WordPress.com.</a>
+<a href="https://wordpress.com/themes/choco/" title="Saber más sobre este tema">El tema Choco</a>.</p>
+
+				<p class="rss"><a href="https://huguidugui.wordpress.com/feed/rss/">Artículos (RSS)</a> y <a href="https://huguidugui.wordpress.com/comments/feed/">Comentarios (RSS)</a></p>
+			</div><!-- #footer -->
+		</div><!-- #page -->
+		<!-- wpcom_wp_footer -->
+<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-2b1653707b7b7f9ae45e5f43b7ee9821">
+	</div>
+	<div class="grofile-hash-map-1f66d080ef7f5adbddba9940b734ab42">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Iniciando sesi\u00f3n\u2026","submittingText":"Publicando comentario\u2026","postCommentText":"Publicar comentario","connectingToText":"Conectando a %s","commentingAsText":"%1$s: Est\u00e1s comentando usando tu cuenta de %2$s.","logoutText":"Cerrar sesi\u00f3n","loginText":"Acceder","connectURL":"https:\/\/huguidugui.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/huguidugui.wordpress.com\/wp-login.php?action=logout&_wpnonce=f43e1462ec","homeURL":"https:\/\/huguidugui.wordpress.com\/","postID":"740","gravDefault":"identicon","enterACommentError":"Por favor, introduce un comentario","enterEmailError":"Por favor introduce tu direcci\u00f3n de correo electr\u00f3nico aqu\u00ed","invalidEmailError":"Direcci\u00f3n de correo electr\u00f3nico no v\u00e1lida","enterAuthorError":"Por favor, introduce tu nombre aqu\u00ed","gravatarFromEmail":"Esta imagen se mostrar\u00e1 cuando dejes un comentario. Haz clic para cambiarla.","logInToExternalAccount":"Inicia sesi\u00f3n para usar los datos de una de estas cuentas.","change":"Cambiar","changeAccount":"Cambiar cuenta","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource(5)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -303px;">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Seguir</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Seguir “Así lo hice...”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Recibe cada nueva publicación en tu buzón de correo electrónico.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Únete a otros 63 seguidores</p>
+			<p><input type="email" name="email" placeholder="Introduce tu dirección de correo electrónico" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="30658323">
+			<input type="hidden" name="source" value="https://huguidugui.wordpress.com/2013/11/20/fpdf-tablas-y-reportes-introduccion/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="ff88e5137c"><input type="hidden" name="_wp_http_referer" value="/2013/11/20/fpdf-tablas-y-reportes-introduccion/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Suscríbeme"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://es.wordpress.com/?ref=lof">Construye un sitio web con WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/huguidugui.wordpress.com\/2013\/11\/20\/fpdf-tablas-y-reportes-introduccion\/":740};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<iframe src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text">A <span>%d</span> blogueros les gusta esto:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/form.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"es","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/saved_resource(6)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "huguidugui.wordpress.com";
+	</script>
+	<script type="text/javascript" src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/725X1342.skimlinks.js"></script><script src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/w.js" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'30658323','blog_tz':'-6','user_lang':'es','blog_lang':'es','user_id':'0'}]);
+_stq.push(['view', {'blog':'30658323','v':'wpcom','tz':'-6','user_id':'0','post':'740','subd':'huguidugui'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdT1UeVRla1NLdXYlUnJLd195UG5zbmRmX043K0psUThlLm5TejZtV185bCVjVjZRa3MuY3JJcGNQT0VnMHMsUHdoOEtLaWs1UXh6YmNVMVlfVnhkMEIxTFNCTmF8eHJTVXxiZz1tZXphLkFaZSZnUyVPb3paSTRdRzN+VTI3bEpvc0NiLV1zai82QV1zN0UzNWpBLWNWdVN+VyYwbl1SXW93X1RCVW9+TTlDM1glN3NNUj90WU5+bl1DPy56L0ZLb3V0VHE/V2FDbERVa3BvSHRORD1GQ1clUkRobk9TMTdbXzZ0cnJJNlFZSTguT3xXL29VWXdUUHJnJW9QMWFkfFNZVlROaHQ='}]);
+_stq.push([ 'clickTrackerInit', '30658323', '740' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>	
+
+<!--
+	generated in 0.447 seconds
+	56410 bytes batcached for 300 seconds
+-->
+<img src="./FPDF_ Tablas y Reportes (Introducción) _ Así lo hice..._files/g.gif" id="wpstats"></body></html>

@@ -1,0 +1,24 @@
+document.write("<div id=\"grv-personalization-16\"></div>\n");
+document.write("<scr"+"ipt type='text/javascript'>\n");
+document.write("//<![CDATA[\n");
+document.write("(function(){\n");
+document.write("window.gravityInsightsParams = {\n");
+document.write("'type': 'content',\n");
+document.write("'action': '',\n");
+document.write("'site_guid': '361837bc83c4c2cba7b350dff56a564f'\n");
+document.write("};\n");
+document.write("var adServerReq,bUrl,cburl,doUseGravityUserGuid,extPlacementIdOpt,externalPlacementId,includeJs,jq,pfurl,type,ug,wlPrefix,wlUrl,_ref,_ref1,_ref2;includeJs=function(a){var b;b=document.createElement(\"script\");b.async=!0;b.src=a;a=document.getElementsByTagName(\"script\")[0];return a.parentNode.insertBefore(b,a)};bUrl=\"\";\n");
+document.write("ug=(doUseGravityUserGuid=!0===gravityInsightsParams.useGravityUserGuid?1:0)?\"\":gravityInsightsParams.user_guid||(null!=(_ref=/grvinsights=([^;]+)/.exec(document.cookie))?_ref[1]:void 0)||\"\";\n");
+document.write("wlUrl=(wlPrefix=\"https:\"===location.protocol?\"https://secure-api.gravity.com/v1/api/intelligence\":\"http://rma-api.gravity.com/v1/api/intelligence\",jq=(null!=(_ref1=window.jQuery)?null!=(_ref2=_ref1.fn)?_ref2.jquery:void 0:void 0)||\"\",type=\"iframe\",adServerReq=gravityInsightsParams.ad||\"\",cburl=gravityInsightsParams.cburl||\"\",pfurl=gravityInsightsParams.pfurl||\"\",extPlacementIdOpt=gravityInsightsParams.epl,externalPlacementId=extPlacementIdOpt&&\"${EXTERNAL_PLACEMENT_ID}\"!==extPlacementIdOpt?extPlacementIdOpt:\n");
+document.write("\"\",\"\"+wlPrefix+\"/wl?jq=\"+jq+\"&sg=\"+gravityInsightsParams.site_guid+\"&ug=\"+ug+\"&ugug=\"+doUseGravityUserGuid+\"&id=grv-personalization-16&pl=16\"+(\"&type=\"+type+\"&ad=\"+adServerReq+\"&cburl=\")+encodeURIComponent(cburl)+\"&pfurl=\"+encodeURIComponent(pfurl)+\"&epl=\"+encodeURIComponent(externalPlacementId)+(\"&x=\"+(new Date).getTime())+(\"undefined\"!==typeof forceArticleIds&&null!==forceArticleIds&&forceArticleIds.join?\"&ai=\"+forceArticleIds.join(\",\"):\"\")+(\"undefined\"!==typeof apids&&null!==apids&&\"\"!==apids?\n");
+document.write("\"&apids=\"+encodeURIComponent(apids):\"\"));bUrl&&includeJs(bUrl);wlUrl&&(window.gravityInsightsParams.sidebar&&(window.gravityInsightsParams.wlStartTime=(new Date).getTime()),includeJs(wlUrl));})();\n");
+document.write("//]]>\n");
+document.write("</scr"+"ipt>\n");
+
+
+document.write('<img src="https://c1.adform.net/serving/cookie/match/?CC=1&party=15&curl=https://ums.adtechus.com/mapuser?providerid=1016;userid=$UID" width="1" height="1" style="display:none;">');
+document.write('<img src="https://rs.gwallet.com/r1/cm/p81r" width="1" height="1" style="display:none;">');
+document.write('<img src="https://idpix.media6degrees.com/orbserv/hbpix?pixId=15194&pcv=50" width="1" height="1" style="display:none;">');
+document.write('<img src="https://x.bidswitch.net/sync?ssp=aol" width="1" height="1" style="display:none;">');
+document.write('<img src="https://s.chango.com/m/aol" width="1" height="1" style="display:none;">');
+document.write('<img src="https://pixel.quantserve.com/pixel/p-NcBg8UA4xqUFp.gif?idmatch=0" width="1" height="1" style="display:none;">');

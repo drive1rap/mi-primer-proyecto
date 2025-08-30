@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0083)http://salvador.maciashernandez.com/Escolares/TVyS/Tutorial_fPDF/Tutorial_FPDF.html -->
+<html lang="es-mx"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+
+  
+  
+
+  
+  <meta name="keywords" content="Salvador Maci­as Hernandez, fPDF, Tutoruial, PDF, PHP">
+
+  
+  <meta name="description" content="Tutorial de fPDF en PHP">
+
+  
+  <meta name="abstract" content="Tutorial de fPDF en PHP"><title>Tutorial sobre fPDF en PHP</title>
+  
+
+  
+  
+  <meta content="Salvador Maci­as Hernandez" name="author"></head><body style="color: rgb(44, 78, 139); background-color: rgb(255, 255, 255); background-image: url(http://www.tecnovalidaciones.com/FondoGradienteGris_Largo.png);" alink="#000099" link="#000099" vlink="#990099">
+<table align="center" bgcolor="#ffffff" border="1" cellpadding="0" cellspacing="0" width="900">
+
+  <tbody>
+    <tr>
+      <td>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td colspan="2" rowspan="1" background="./Tutorial sobre fPDF en PHP_files/MargenSupImagenPrincipalSMH.jpg">
+            <img style="border: 0px solid ; width: 920px; height: 311px;" alt="" src="./Tutorial sobre fPDF en PHP_files/ImagenPrincipalPaginaSMH.jpg"> </td>
+            <td style="vertical-align: top;"> <img style="border: 0px solid ; width: 59px; height: 311px;" alt="" src="./Tutorial sobre fPDF en PHP_files/EsquinaImagenPrincipalSMH.jpg"> </td>
+          </tr>
+          <tr>
+            <td style="width: 316px; vertical-align: top;" background="./Tutorial sobre fPDF en PHP_files/MargenIzquierdo.jpg"> <img src="./Tutorial sobre fPDF en PHP_files/ImagenAjusteAnchoColIzq.jpg" align="left" border="0"> <img src="./Tutorial sobre fPDF en PHP_files/Slice04.jpg" align="left"> <a href="http://salvador.maciashernandez.com/"><img style="border: 0px solid ; width: 205px; height: 21px;" alt="" src="./Tutorial sobre fPDF en PHP_files/MenuPrincipal_Morado.gif"></a><br>
+            <a href="http://salvador.maciashernandez.com/Escolares/Escolares.html"><img style="border: 0px solid ; width: 205px; height: 21px;" alt="" src="./Tutorial sobre fPDF en PHP_files/MenuEscolares_Azul.gif"></a><br>
+            <a href="http://salvador.maciashernandez.com/Proyectos.html"><img style="border: 0px solid ; width: 205px; height: 21px;" alt="" src="./Tutorial sobre fPDF en PHP_files/MenuProyectos_Morado.gif"></a><br>
+            <br>
+            <center> <img src="./Tutorial sobre fPDF en PHP_files/mexicana.gif"><br>
+            <br>
+            <script type="text/javascript" src="./Tutorial sobre fPDF en PHP_files/p.js"></script>
+            <script type="text/javascript">rm2d_ki101('0','200','100','7nyykzpx1zr','ff0000',0);</script><object data="http://rf.revolvermaps.com/f/f.swf" type="application/x-shockwave-flash" id="rm_pkI1_" width="200" height="100"><param name="movie" value="http://rf.revolvermaps.com/f/f.swf"><param name="allowNetworking" value="all"><param name="allowScriptAccess" value="always"><param name="wmode" value="window"><param name="flashvars" value="m=0&amp;i=7nyykzpx1zr&amp;c=ff0000&amp;r=0"></object>
+            </center>
+            </td>
+            <td bgcolor="#ffffff" valign="top"> <img style="width: 528px; height: 54px;" alt="" src="./Tutorial sobre fPDF en PHP_files/Escolares.gif"><br>
+            <br>
+            <div style="text-align: center;">
+            <h1>TUTORIAL DE fPDF</h1>
+            </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fPDF es una
+excelente herramienta para desarrollar aplicaciones en línea con el
+lenguaje de programación PHP y que puedan generar reportes en PDF.<br>
+            <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Los sitios
+oficiales de PHP y de fPDF son: <a href="http://www.php.net/">http://www.php.net/</a>&nbsp;
+y <a href="http://www.fpdf.org/">http://www.fpdf.org/</a>
+en ellos se encuentran mucha información para tus aplicaciones. En
+particular el sitio de fPDF contiene unos tutoriales muy útiles para
+programar las aplicaciones. Nosotros vamos a comenzar con lo mismos
+ejemplos de los tutoriales de fPDF puesto que es lo más básico para
+poder gener un simple PDF.<br>
+            <br>
+            <table style="text-align: left; width: 100px; margin-left: auto; margin-right: auto;" border="0" cellpadding="2" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top;"><img style="width: 67px; height: 80px;" alt="" src="./Tutorial sobre fPDF en PHP_files/phplogo.jpeg"><br>
+                  </td>
+                  <td style="vertical-align: top;"><img style="width: 104px; height: 71px;" alt="" src="./Tutorial sobre fPDF en PHP_files/fPDFlogo.png"><br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+Con fPDF usted puede crear formularios que se llenan en la web y que
+producen un archivo pdf, o bien puede hacer una consulta a la base de
+datos y generar el resultado del Query en un archivo PDF que se pueda
+imprimir de forma profesional.<br>
+            <br>
+            <div style="text-align: center;">
+            <h2>LA INSTALACIÓN<br>
+            </h2>
+            </div>
+Hay que entrar al sitio oficial de fPDF y dar clic en donde dice
+Descargas, allí se presentan varias versiones, elige la más actual y
+bajala a tu disco duro, descomprime el archivo y copia el directorio en
+tu servidor. Aquí te dejo un video que encontré en la red:<br>
+<br>
+            <div style="text-align: center;">
+            <iframe src="./Tutorial sobre fPDF en PHP_files/nxxJE-RJoHM.html" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+
+            <br>
+            </div>
+
+            <br>
+
+
+            <h2 style="text-align: center;">LOS COMANDOS BÁSICOS</h2>
+            <h3>require('fpdf.php')</h3>
+Siempre debemos de incluir un llamado a la librería fPDF desde nuestro
+programa en php. Allí es donde se encuentra el código de las
+herramientas que fPDF nos brinda para poder generar ficheros PDFs. Sin
+él no podemos hacer nada más. <br>
+            <br>
+También se puede susbtituir el comando requiere por include. Es posible
+tener la librería fPDF en un directorio aparte de donde se encuentra el
+programa y esto lo puedes hacer de cualquiera de las siguientes maneras:<br>
+            <br>
+            <div style="text-align: center;"><span style="font-style: italic; color: black; background-color: rgb(204, 204, 204);">require('../../Librerias/fPDF/fpdf.php');<br>
+            include('../../Librerias/fPDF/fpdf.php');</span><br>
+            </div>
+            <br>
+            <h3>FPDF()</h3>
+Es el constructor de la clase, el método más importante. Sin él no
+entra en acción fPDF. Siempre debes de tener esta línea en tu programa.
+Después puedes modificar los atributos de la clase (con los comandos
+que abajo se describen) para que se genere el archvo pdf.<br>
+            <br>
+Sintaxis:<br>
+            <div style="text-align: center;"><span style="color: black; background-color: rgb(204, 204, 204);">$pdf
+= new PDF(</span><span style="font-style: italic; color: black; background-color: rgb(204, 204, 204);">[Orientacion],
+[Unidad], [Tamaño]</span><span style="color: black; background-color: rgb(204, 204, 204);">);</span><br>
+            </div>
+            <br>
+Dónde:<br>
+            <ul>
+              <li>Orientación de página por defecto. Los posibles
+valores son (indiferente a mayúsculas): </li>
+              <ul>
+                <li>P o Portrait (normal) </li>
+                <li>L o Landscape (apaisado) </li>
+              </ul>
+            </ul>
+            <div style="margin-left: 40px;">&nbsp;Valor por defecto es
+P. <br>
+            </div>
+            <ul>
+              <li>Unidad: Unidad de medida de usuario. Los posibles
+valores son: </li>
+            </ul>
+            <ul style="margin-left: 40px;">
+              <li>pt: punto </li>
+              <li>mm: milimetro </li>
+              <li>cm: centimetro </li>
+              <li>in: pulgada </li>
+            </ul>
+            <div style="margin-left: 40px;">&nbsp;Un punto es igual a
+1/72 de pulgada, es decir cerca de 0.35 mm (siendo una pulgada 2.54
+cm). Esta es una unidad muy común en tipografía; los tamaños de fuentes
+son expresados en esa unidad. <br>
+            </div>
+            <br>
+            <div style="margin-left: 40px;">&nbsp;Valor por defecto es
+mm. <br>
+            </div>
+            <ul>
+              <li>Tamaño: El formato usado por las páginas. Es puede
+ser uno de los siguientes valores (indiferente a mayúsculas): </li>
+            </ul>
+            <ul style="margin-left: 40px;">
+              <li>A3 </li>
+              <li>A4 </li>
+              <li>A5 </li>
+              <li>Letter </li>
+              <li>Legal </li>
+              <li>&nbsp;o un formato personalizado en la forma de un
+array de dos elementos conteniendo el ancho y el alto (expresado en la
+unidad dada por unit). </li>
+            </ul>
+            <div style="margin-left: 40px;">&nbsp;Valor por defecto es
+A4.<br>
+            </div>
+            <br>
+Ejemplos:<br>
+            <div style="text-align: center;">$pdf = new
+FPDF('P','mm',array(100,150));<br>
+            <br>
+$pdf = new PDF();<br>
+            </div>
+            <br>
+            <h3>AddPage()</h3>
+Añade una nueva página al documento.&nbsp; La fuente que fue fijada
+antes de ser invocada es restaurada automáticamente. No es necesario
+invocar nuevamente SetFont() si desea continuar con la misma fuente.
+Esto también se aplica para colores y ancho de líneas.<br>
+            <br>
+&nbsp;<span style="font-weight: bold;">El origen del sistema de
+coordenadas es la esquina superior izquierda y se incrementan hacia
+abajo</span>.<br>
+            <br>
+Sintaxis:<br>
+            <div style="text-align: center;"><span style="color: black; background-color: rgb(204, 204, 204);">$pdf-&gt;AddPage([Orientacion],
+[Tamaño]);</span><br>
+            </div>
+            <br>
+Donde Orientación y Tamaño tienen las mismas especificaciones que las
+indicadas en el comando FPDF.<br>
+            <br>
+Ejemplos:<br>
+            <div style="text-align: center;">$pdf-&gt;AddPage();<br>
+$pdf-&gt;AddPage('P');<br>
+$pdf-&gt;AddPage('P', 'Letter');<br>
+            </div>
+            <h3>SetFont()</h3>
+Establece la fuente usada para imprimir cadenas de carácteres. <span style="font-weight: bold;">Es obligatorio invocar este método por lo
+menos una vez antes de imprimir texto</span> o el documento resultante
+no será válido. El método puede ser invocado antes que la primera
+página sea creada y es mantenido de página a página.&nbsp; Si sólo
+desea cambiar el tamaño de la fuente actual, es más simple invocar
+SetFontSize().<br>
+            <br>
+Sintaxis:<br>
+            <div style="text-align: center;"><span style="color: black; background-color: rgb(204, 204, 204);">SetFont(string
+family [, string style [, float size]])</span><br>
+            <div style="text-align: left;"><br>
+Donde: <br>
+            <ul>
+              <li>Family:&nbsp; Familia de fuente. Puede ser un nombre
+definido por AddFont() o una de las familias estándar (no sensible a
+mayúsculas o minúsculas):</li>
+              <ul>
+                <li>Courier (fixed-width) <br>
+                </li>
+                <li>Helvetica o Arial (sinónimo; sans serif) <br>
+                </li>
+                <li>Times (serif) <br>
+                </li>
+                <li>Symbol (symbolic) <br>
+                </li>
+                <li>ZapfDingbats (symbolic)&nbsp; <br>
+                </li>
+              </ul>
+            </ul>
+            <div style="margin-left: 40px;">Tambien es posible pasar un
+cadena vacia. En este caso, se mantiene la familia actual. <br>
+            </div>
+            <br>
+            <ul>
+              <li>Style: Estilo de fuente. Los valores posibles son (no
+sensible a mayúsculas o minúsculas): <br>
+              </li>
+              <li>cadena vacia: regular <br>
+              </li>
+              <ul>
+                <li>B: bold <br>
+                </li>
+                <li>I: italic <br>
+                </li>
+                <li>U: underline&nbsp; <br>
+                </li>
+                <li>o cualquier combinación. El valor por defecto es
+regular.</li>
+              </ul>
+            </ul>
+            <div style="margin-left: 40px;">&nbsp;Los estilos Bold e
+italic no aplican para Symbol y ZapfDingbats. <br>
+            </div>
+            <ul>
+              <li>Size:&nbsp; Tamaño de fuente en puntos.&nbsp; El
+valor por defecto es el tamaño actual. Si ningún tamaño ha sido
+especificado desde el comienzo del documento, toma el valor de 12.</li>
+            </ul>
+Ejemplos:<br>
+            <div style="text-align: center;">// Times regular 12<br>
+$pdf-&gt;SetFont('Times');<br>
+// Arial bold 14<br>
+$pdf-&gt;SetFont('Arial','B',14);<br>
+// Elimina bold<br>
+$pdf-&gt;SetFont('');<br>
+// Times bold, italic y underlined 14<br>
+$pdf-&gt;SetFont('Times','BIU');<br>
+            </div>
+            </div>
+            </div>
+            <h3>Cell()</h3>
+Imprime una celda (de área rectangular) bordes opcionales, color de
+fondo y secuencia de carácteres La esquina superior izquierda de la
+celda corresponde a la posición actual. El texto puede ser alineado o
+centrado. Despues de invocar, la posición actual se desplaza a la
+derecha o la siguiente línea. Es posible poner una referencia en el
+texto. <br>
+&nbsp;Si está el salto de página automático habilitado y la celda esta
+por fuera del límite, es realizado un salto de página antes de producir
+la salida.<br>
+            <br>
+Este comando es uno de los más utilizados por que se usa para imprimir
+el texto. Por ello ahondaremos más en éste.<br>
+            <br>
+Sintaxis:<br>
+            <div style="text-align: center;"><span style="color: black; background-color: rgb(204, 204, 204);">Cell(float
+w [, float h [, string txt [, mixed border [, int ln [, string align [,
+boolean fill [, mixed link]]]]]]])</span><br>
+            </div>
+            <br>
+Donde:<br>
+            <ul>
+              <li>W: Ancho de Celda. Si es 0, la celda se extiende
+hasta la márgen derecha. <br>
+              </li>
+              <li>H: Alto de celda. Valor por defecto: 0.</li>
+              <li>TXT: Cadena a ser impresa. Valor por defecto: cadena
+vacia. <br>
+              </li>
+              <li>Border: Indica si los bordes deben se dibujados
+alrededor de la celda. El valor puede ser un número: <br>
+              </li>
+              <ul>
+                <li>0: sin borde</li>
+                <li>1: marco</li>
+                <li>&nbsp;o una cadena que contenga una o una
+combinación de los siguientes caracteres (en cualquier orden): <br>
+                </li>
+                <ul>
+                  <li>L: izquierda</li>
+                  <li>T: superior</li>
+                  <li>R: derecha</li>
+                  <li>B: inferior</li>
+                </ul>
+              </ul>
+            </ul>
+            <div style="margin-left: 40px;">&nbsp;Valor por defecto: 0.
+            <br>
+            </div>
+            <ul>
+              <li>Ln: Indica donde la posición actula debería ir antes
+de invocar. Los valores posibles son: <br>
+              </li>
+              <ul>
+                <li>0: a la derecha</li>
+                <li>1: al comienzo de la siguiente línea</li>
+                <li>2: debajo</li>
+              </ul>
+            </ul>
+            <div style="margin-left: 40px;">Poner 1 es equivalente a
+poner 0 y llamar justo despues Ln(). <br>
+Valor por defecto: 0. <br>
+            </div>
+            <ul>
+              <li>Align:&nbsp; Permite centrar o alinear el texto. Los
+posibles valores son: <br>
+              </li>
+              <ul>
+                <li>L o una cadena vacia: alineación izquierda (valor
+por defecto)</li>
+                <li>C: centro</li>
+                <li>R: alineación derecha</li>
+              </ul>
+              <li>Fill:&nbsp; Indica si elfondo de la celda debe ser
+dibujada (true) o transparente (false). Valor por defecto: false. <br>
+              </li>
+              <li>Link: URL o identificador retornado por AddLink().<br>
+              </li>
+            </ul>
+Ejemplos:<br>
+            <div style="text-align: center;">// Texto centrado en una
+celda con cuadro 20*10 mm y salto de línea<br>
+$pdf-&gt;Cell(20,10,'Title',1,1,'C');<br>
+            </div>
+            <br>
+            <br>
+            <br>
+            <h3>Output()</h3>
+            Envía
+el documento a un destino dado: una cadena, un fichero local o al
+navegador. En el último caso, puede utilizarse la extensión -plug in-
+(si existe) o forzarse un cuadro de diálogo de descarga.&nbsp; El
+método invoca ante todo a Close() si es necesario cerrar el documento.<br>
+            <br>
+Sintaxis:<br>
+            <div style="text-align: center;"><span style="color: black; background-color: rgb(204, 204, 204);">string Output([string name, string dest])</span><br>
+            </div>
+            <br>
+            <ul>
+              <li>Name:&nbsp; El nombre del fichero. Si no se especifica, el documento se envía al navegador (destino I) con el nombre doc.pdf. <br>
+              </li>
+              <li>Dest:&nbsp; Destino al que enviar el documento. Puede tener uno de los siguientes valores: <br>
+              </li>
+              <ul>
+                <li>I: envía el fichero al navegador de forma que se
+usa la extensión (plug in) si está disponible. El nombre dado en nombre
+se usa si el usuario escoge la opción "Guardar como..." en el enlace
+que genera el PDF. <br>
+                </li>
+                <li>D: envía el fichero al navegador y fuerza la descarga del fichero con el nombre especificado por nombre. <br>
+                </li>
+                <li>F: guarda el fichero en un fichero local de nombre nombre. <br>
+                </li>
+                <li>S: devuelve el documento como una cadena. nombre se ignora.<br>
+                </li>
+              </ul>
+            </ul>
+Ejemplos:<br>
+            <div style="text-align: center;">
+$pdf-&gt;Output();<br>
+$pdf-&gt;Output('PAMY.pdf','D'); <br>
+            </div>
+            <br>
+            <div style="text-align: center;">
+            <h2>NUESTROS PRIMEROS PROGRAMAS</h2>
+            </div>
+
+            <span style="color: black;">Primer Programa</span><br>
+            <table style="text-align: left; width: 90%; background-color: rgb(204, 204, 204); margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top;">&lt;?php<br>
+&nbsp;&nbsp;&nbsp; //-----------------------------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp; //&nbsp;&nbsp;&nbsp; Ejemplo básico de utilización de fPDF<br>
+&nbsp;&nbsp;&nbsp; //-----------------------------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp; require('fpdf.php');<br>
+                  <br>
+&nbsp;&nbsp;&nbsp; $pdf=new FPDF();<br>
+&nbsp;&nbsp;&nbsp; $pdf-&gt;AddPage();<br>
+&nbsp;&nbsp;&nbsp; $pdf-&gt;SetFont('Arial','B',16);<br>
+&nbsp;&nbsp;&nbsp; $pdf-&gt;Cell(40,10,'Hola Mundo!');<br>
+&nbsp;&nbsp;&nbsp; $pdf-&gt;Output();<br>
+&nbsp;?&gt;<br>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div style="text-align: center;"><a href="http://salvador.maciashernandez.com/Escolares/TVyS/Tutorial_fPDF/PrimerPrograma.php"><img style="border: 0px solid ; width: 64px; height: 64px;" alt="" src="./Tutorial sobre fPDF en PHP_files/icoRUN.png"></a><br>
+            </div>
+
+            Explicación del programa:<br>
+            <ol>
+              <li>La primera línea <span style="color: rgb(0, 102, 0);">&lt;?php</span> nos indica que comienza el código del programa utilizando PHP.</li>
+              <li>Las siguientes tres líneas que comienzan con <span style="color: rgb(0, 102, 0);">// </span>es un comentario del programa.</li>
+              <li>El comando <span style="color: rgb(0, 102, 0);">requiere</span> le indica al servidor que se va a utilizar la librería fpdf. Y va a incorporar el código de la librería en nuestro programa.</li>
+              <li>El comando new <span style="color: rgb(0, 102, 0);">FPDF()</span> le indica al servidor que se va generar un nuevo archivo PDF con las instrucciones de la librería fPDF.</li>
+              <li>El comando <span style="color: rgb(0, 102, 0);">AddPage()</span> agrega una página nueva al documento PDF</li>
+              <li><span style="color: rgb(0, 102, 0);">SetFont()</span> define el tipo a utilizar que es Arial Bold de 16 puntos.</li>
+              <li><span style="color: rgb(0, 102, 0);">Cell()</span> escribe Hola Mundo! en el documento. Cell lo escribe en la coordenada (40,10)</li>
+              <li>El comando <span style="color: rgb(0, 102, 0);">Output()</span> genera el archivo pdf y lo envía al navegador.</li>
+            </ol>
+            <br style="font-style: italic; background-color: rgb(255, 255, 102);">
+            <div style="text-align: center;"><span style="font-style: italic; background-color: rgb(255, 255, 102);">Recuerda
+que para que el código anterior funcione. Debes de haber instalado la
+librería completa en un servidor que corra con PHP y el programa que
+acabamos de generar debe estar en el mismo directorio que el archivo
+fpdf.php</span><br>
+            </div>
+            <br>
+            <br>
+
+            
+            <div style="text-align: center;"><a style="font-style: italic;" href="http://salvador.maciashernandez.com/Escolares/TVyS/Tutorial_fPDF/EjemploCuadroComparativo.html">S i g u i e n t e&nbsp; --&gt;</a><br>
+            </div>
+
+            <br>
+            <div style="text-align: center;">
+            <h2>REFERENCIAS Y BIBLIOGRAFÍA<br>
+            </h2>
+            </div>
+            <ul>
+              <li>fPDF; <span style="font-weight: bold;">Sitio Oficial
+de fPDF</span>; <a href="http://www.fpdf.org/">http://www.fpdf.org/</a></li>
+              <li>php; Sitio Oficial de Php; <a href="http://www.php.net/">http://www.php.net/</a></li>
+              <li><br>
+              </li>
+            </ul>
+            <br>
+            <br>
+            <br>
+            </td>
+            <td style="width: 6%;" background="./Tutorial sobre fPDF en PHP_files/MargenDerecho.jpg"> <img style="border: 0px solid ; width: 59px; height: 204px;" alt="" src="./Tutorial sobre fPDF en PHP_files/MargenDerecho.jpg"> </td>
+          </tr>
+          <tr>
+            <td colspan="2" background="./Tutorial sobre fPDF en PHP_files/FondoMargenInferiorDerecho.jpg">
+            <img src="./Tutorial sobre fPDF en PHP_files/MargenInferior.jpg"> </td>
+            <td width="6%"> <img src="./Tutorial sobre fPDF en PHP_files/MargenInferiorDerecho.jpg"> </td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>
